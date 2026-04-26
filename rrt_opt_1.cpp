@@ -3,6 +3,14 @@
 //compile command:
 //g++ -std=c++17 rrt_opt.cpp -o rrt_opt
 
+//further optimizations:    1) Find the closest integer node from the random point to the nearest node with 3 directoins. 
+//                          2) When operating branch extension, only add the node that is extended before the collision.
+//                 My idea! 3) When finding the nearest node, starts from the root and its children. Chsen the closest child node as the new sub-tree to search. The nearest node is found when the node is a root.
+//                              Which reduced the searching space to  lg(N).
+//Hardware optimization: 1) Size of the new node FIFO is equal to the cycles needed by collision check.
+
+//Problem for improving nearest node searching: If record every childeren, the required memoery will also grows exponentially. What if only record the child that closest to the goal?
+
 #include <iostream>
 #include <vector>
 #include <cmath>
