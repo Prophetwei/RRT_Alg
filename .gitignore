@@ -1,0 +1,10 @@
+.gitignore
+RTL Project/
+Related Paper/
+a.out_file/
+tree/
+A_1.5-J_Task_Path-Planning_Processor_for_2-D_3-D_Autonomous_Navigation_of_Microrobots.pdf
+map/*.txt
+*.DS_Store
+*.png
+excludesfile = ~/.gitignore_global
