@@ -3,9 +3,8 @@
 //compile command:
 //g++ -std=c++17 rrt_opt.cpp -o rrt_opt
 
-//further optimizations:    1) Find the closest integer node from the random point to the nearest node with 3 directoins. 
-//                          2) When operating branch extension, only add the node that is extended before the collision.
-//                 My idea! 3) When finding the nearest node, starts from the root and its children. Chsen the closest child node as the new sub-tree to search. The nearest node is found when the node is a root.
+//further optimizations:    1) When the map is updated, only check the nodes that are close to the updated area. If a node is found to be in collision, mark it as invalid and propagate this invalidity to its children. This way we can avoid re-checking the entire tree and only focus on the affected branches.
+//                 My idea! 2) When finding the nearest node, starts from the root and its children. Chsen the closest child node as the new sub-tree to search. The nearest node is found when the node is a root.
 //                              Which reduced the searching space to  lg(N).
 //Hardware optimization: 1) Size of the new node FIFO is equal to the cycles needed by collision check.
 
