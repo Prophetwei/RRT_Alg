@@ -39,4 +39,4 @@ def generate_map_with_gaps(filename="map/map.txt", size=1000, num_blocks=60, min
     print(f"Map saved to {filename} with {len(placed_blocks)} non-overlapping blocks.")
 
 if __name__ == "__main__":
-    generate_map_with_gaps(size=1000, num_blocks=100, min_gap=10)
+    generate_map_with_gaps(size=1024, num_blocks=100, min_gap=10)
