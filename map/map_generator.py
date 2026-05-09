@@ -1,12 +1,12 @@
 import random
 
-def generate_map_with_gaps(filename="map/map.txt", size=1000, num_blocks=60, min_gap=10):
+def generate_map_with_gaps(filename="map/map.txt", size=1024, num_blocks=60, min_gap=5):
     map_matrix = [[0 for _ in range(size)] for _ in range(size)]
     placed_blocks = []
 
     for _ in range(num_blocks):
         # 1. Define randomized size for the block
-        block_w = random.randint(30, 80)
+        block_w = random.randint(30, 50)
         block_h = random.randint(30, 80)
         
         # 2. Try multiple times to find a spot that doesn't overlap
@@ -39,4 +39,4 @@ def generate_map_with_gaps(filename="map/map.txt", size=1000, num_blocks=60, min
     print(f"Map saved to {filename} with {len(placed_blocks)} non-overlapping blocks.")
 
 if __name__ == "__main__":
-    generate_map_with_gaps(size=1000, num_blocks=100, min_gap=10)
+    generate_map_with_gaps(size=1024, num_blocks=100, min_gap=10)
