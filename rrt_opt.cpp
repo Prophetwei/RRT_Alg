@@ -1,4 +1,4 @@
-//static optimized with dual-tree, branch extension
+//optimized with dual-tree, branch extension
 //compile command:
 //g++ -std=c++17 rrt_opt.cpp -o rrt_opt
 
@@ -7,216 +7,205 @@
 #include <cmath>
 #include <random>
 #include <fstream>
+#include <string>
 #include <algorithm>
 
-constexpr int MAP_SIZE = 1000;
-constexpr int MAP_RANGE = 1024;
+const int MAP_RANGE = 1024;
+const int MAP_SIZE = 1024;
+const int SEARCH_RANGE = 3;
 
 struct Node {
     int x, y;
-    int parent = -1;
+    int parent_index;
 };
 
-class BiRRT {
-public:
-    BiRRT() : gen(rd()), dist(0, MAP_RANGE - 1) {}
+// Global State
+std::vector<Node> start_tree, goal_tree;
+bool map_memory[MAP_SIZE][MAP_SIZE];
+Node start_node, goal_node;
+bool done_flag = false;
+bool is_start_tree;
+int start_conn_idx = -1;
+int goal_conn_idx = -1;
 
-    void run(const Node& start_node, const Node& goal_node, int bias = 5) {
-        if (!loadMap("map/map.txt")) return;
+// Unified Random Point Generator with Goal Bias
+Node get_random_point(const Node& target, int bias_threshold) {
+    if ((rand() % 100) < bias_threshold) return {512, 512, -1};
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::uniform_real_distribution<> dis(0, MAP_RANGE - 1);
+    return {dis(gen), dis(gen), -1};
+}
 
-        initTrees();
-
-        std::cout << "Planning...\n";
-        for (int i = 0; i < 10000 && !connected; ++i) {
-            grow(goal_node, bias);
-            if (connected) break;
+// Unified Nearest Neighbor Search
+int find_nearest_node(Node rand_point) {
+    int index = 0;
+    double min_dist =10e9;
+    for (int i = 0; i < (int)start_tree.size(); i++) {
+        double dist = std::abs(rand_point.x - start_tree[i].x) + std::abs(rand_point.y - start_tree[i].y);
+        if (dist < min_dist) {
+            min_dist = dist;
+            index = i;
+            is_start_tree = true;
         }
-
-        if (connected) {
-            extractPath();
-            saveTrees();
-            printMemory();
-        } else {
-            std::cout << "Failed to find path.\n";
+    }
+    for (int i = 0; i < (int)goal_tree.size(); i++) {
+        double dist = std::abs(rand_point.x - goal_tree[i].x) + std::abs(rand_point.y - goal_tree[i].y);
+        if (dist < min_dist) {
+            min_dist = dist;
+            index = i;
+            is_start_tree = false;
         }
     }
+    return index;
+}
 
-private:
-    bool occupancy_grid[MAP_SIZE][MAP_SIZE]{};
+// Collision Detection
+bool is_collision(Node node) {
+    if (node.x < 0 || node.x >= MAP_SIZE || node.y < 0 || node.y >= MAP_SIZE || map_memory[node.x][node.y]) return true;
+    return false;
+}
 
-    std::vector<Node> start_tree, goal_tree;
-
-    bool connected = false;
-    int start_idx = -1, goal_idx = -1;
-    bool start_active = true;
-
-    std::random_device rd;
-    std::mt19937 gen;
-    std::uniform_real_distribution<> dist;
-
-    // ---------------- Core ----------------
-
-    void grow(const Node& goal_node, int bias) {
-        Node rnd = sample(goal_node, bias);
-        int nearest = nearestIndex(rnd);
-        extend(nearest, rnd, active, other);
-    }
-
-    Node sample(const Node& goal_node, int bias) {
-        if ((rand() % 100) < bias) return goal_node;
-        return {dist(gen), dist(gen)};
-    }
-
-    int nearestIndex(const Node& p) {
-        int best = 0;
-        int min_dist = 1e9;
-
-        for (int i = 0; i < (int)start_tree.size(); ++i) {
-            int d = std::abs(p.x - start_tree[i].x) + std::abs(p.y - start_tree[i].y);
-            if (d < min_dist) {
-                min_dist = d;
-                best = i;
-                start_active = true;
+// Connection Checker for Dual-Tree
+void check_connection() {
+    const std::vector<Node> active_tree = (is_start_tree) ? start_tree : goal_tree;
+    const std::vector<Node> other_tree = (is_start_tree) ? goal_tree : start_tree;
+    const Node& last_node = active_tree.back();
+    for (int i = 0; i < (int)other_tree.size(); i++) {
+        if (last_node.x == other_tree[i].x && last_node.y == other_tree[i].y) {
+            done_flag = true;
+            if (is_start_tree) {
+                start_conn_idx = active_tree.size() - 1;
+                goal_conn_idx = i;
+            } else {
+                goal_conn_idx = active_tree.size() - 1;
+                start_conn_idx = i;
             }
-        }
-        for (int i = 0; i < (int)goal_tree.size(); ++i) {
-            int d = std::abs(p.x - goal_tree[i].x) + std::abs(p.y - goal_tree[i].y);
-            if (d < min_dist) {
-                min_dist = d;
-                best = i;
-                start_active = false;
-            }
-        }
-        return best;
-    }
-
-    void extend(int parent, Node target) {
-        std::vector<Node>& tree = start_active ? start_tree : goal_tree;
-
-        const Node& base = tree[parent];
-        int dx = target.x - base.x;
-        int dy = target.y - base.y;
-
-        std::pair<int, int> vec;
-
-        bool bound_px, bound_nx, bound_py, bound_ny;
-        bound_px = (dy > 2 * dx);
-        bound_nx = (dy < -2 * dx);
-        bound_py = (dx > 2 * dy);
-        bound_ny = (dx < -2 * dy);
-
-        vec = (bound_px || bound_nx) ? std::make_pair(0, (dy > 0) ? 1 : -1) :
-              (bound_py || bound_ny) ? std::make_pair((dx > 0) ? 1 : -1, 0) :
-              std::make_pair((dx > 0) ? 1 : -1, (dy > 0) ? 1 : -1);
-
-        Node next{
-            base.x + vec.first,
-            base.y + vec.second,
-            parent
-        };
-        if (collision(next)) return;
-        tree.push_back(next);
-        parent = tree.size() - 1;
-
-        for (int i = 0; i < 4; i++) {
-            next = {next.x + vec.first, next.y + vec.second, parent};
-
-            if (collision(next)) return;
-
-            tree.push_back(next);
-            parent = tree.size() - 1;
-
-            if (tryConnect(tree, other)) return;
+            return;
         }
     }
+}
 
-    bool tryConnect(const std::vector<Node>& a,
-                    const std::vector<Node>& b) {
+// Unified Branch Extension
+void extend_branch(int parent_idx, Node sample_node) {
+    Node nearest_node = (is_start_tree) ? start_tree[parent_idx] : goal_tree[parent_idx];
+    int vector[2];
+    int dx = sample_node.x - nearest_node.x;
+    int dy = sample_node.y - nearest_node.y;
 
-        const Node& last = a.back();
-
-        for (int i = 0; i < (int)b.size(); ++i) {
-            double d = std::hypot(last.x - b[i].x, last.y - b[i].y);
-
-            if (d < STEP_SIZE && !collision(last, b[i])) {
-                connected = true;
-                start_idx = (&a == &start_tree) ? a.size() - 1 : i;
-                goal_idx  = (&a == &start_tree) ? i : a.size() - 1;
-                return true;
-            }
-        }
-        return false;
+    if (dx > 0) {
+        vector[0] = (2 * dx > dy) ? 1 : 0;
+    } else {
+        vector[0] = (2 * dx < dy) ? -1 : 0;
     }
-
-    // ---------------- Collision ----------------
-
-    bool collision(Node node) {
-        int x0 = std::clamp((int)a.x, 0, MAP_SIZE - 1);
-        int y0 = std::clamp((int)a.y, 0, MAP_SIZE - 1);
-
-        if (occupancy_grid[x0][y0]) return true;
-        return false;
+    if (dy > 0) {
+        vector[1] = (dx > 2 * dy) ? 0 : 1;
+    } else {
+        vector[1] = (dx < 2 * dy) ? 0 : -1;
     }
+    if (vector[0] == 0 && vector[1] == 0) return;
 
-    // ---------------- I/O ----------------
+    Node new_node;
+    new_node.x = nearest_node.x + vector[0];
+    new_node.y = nearest_node.y + vector[1];
+    new_node.parent_index = parent_idx;
+    for (int i = 0; i < 4; i++) {
+        if (is_collision(new_node)) break;
 
-    bool loadMap(const std::string& path) {
-        std::ifstream file(path);
-        if (!file) {
-            std::cerr << "Error: map.txt not found\n";
-            return false;
-        }
+        (is_start_tree) ? start_tree.push_back(new_node) : goal_tree.push_back(new_node);
+        new_node.x = new_node.x + vector[0];
+        new_node.y = new_node.y + vector[1];
+        new_node.parent_index = (is_start_tree) ? start_tree.size() - 1 : goal_tree.size() - 1;
 
-        for (int y = 0; y < MAP_SIZE; ++y)
-            for (int x = 0; x < MAP_SIZE; ++x) {
-                int v;
-                file >> v;
-                occupancy_grid[x][y] = (v == 1);
-            }
-
-        return true;
+        check_connection();
+        if (done_flag) return;
     }
+}
 
-    void initTrees() {
-        start_tree = {start_node};
-        goal_tree  = {goal_node};
+void extract_path() {
+    if (start_conn_idx == -1 || goal_conn_idx == -1) return;
+    std::vector<Node> full_path;
+    int curr = start_conn_idx;
+    while (curr != -1) {
+        full_path.insert(full_path.begin(), start_tree[curr]);
+        curr = start_tree[curr].parent_index;
     }
-
-    void extractPath() {
-        std::vector<Node> path;
-
-        for (int i = start_idx; i != -1; i = start_tree[i].parent)
-            path.insert(path.begin(), start_tree[i]);
-
-        for (int i = goal_idx; i != -1; i = goal_tree[i].parent)
-            path.push_back(goal_tree[i]);
-
-        std::cout << "Path found! Nodes: " << path.size() << "\n";
-
-        std::ofstream f("tree/path");
-        for (auto& n : path)
-            f << n.x << " " << n.y << "\n";
+    curr = goal_conn_idx;
+    while (curr != -1) {
+        full_path.push_back(goal_tree[curr]);
+        curr = goal_tree[curr].parent_index;
     }
+    std::cout << "Path found! Nodes: " << full_path.size() << std::endl;
+    std::ofstream path_file("tree/path");
+    for (const auto& n : full_path) path_file << n.x << " " << n.y << "\n";
+    path_file.close();
+}
 
-    void saveTrees() {
-        std::ofstream s("tree/start_nodes"), g("tree/goal_nodes");
-
-        for (auto& n : start_tree) s << n.x << " " << n.y << "\n";
-        for (auto& n : goal_tree)  g << n.x << " " << n.y << "\n";
+void save_all_nodes() {
+    std::ofstream s_file("tree/start_nodes");
+    for (const auto& node : start_tree) {
+        s_file << node.x << " " << node.y << "\n";
     }
+    s_file.close();
 
-    void printMemory() {
-        size_t map_mem = sizeof(occupancy_grid);
-        size_t node_mem = (start_tree.size() + goal_tree.size()) * sizeof(Node);
-
-        std::cout << "--- Memory ---\n";
-        std::cout << "Map: " << map_mem / 1024.0 << " KB\n";
-        std::cout << "Nodes: " << node_mem / 1024.0 << " KB\n";
+    std::ofstream g_file("tree/goal_nodes");
+    for (const auto& node : goal_tree) {
+        g_file << node.x << " " << node.y << "\n";
     }
-};
+    g_file.close();
+    std::cout << "All tree nodes saved to 'start_nodes' and 'goal_nodes'" << std::endl;
+}
+
+void print_memory_stats() {
+    size_t map_mem = sizeof(map_memory); // Static grid size
+    size_t node_size = sizeof(Node);
+    size_t tree_mem = (start_tree.size() + goal_tree.size()) * node_size;
+
+    std::cout << "--- Memory Stats ---" << std::endl;
+    std::cout << "Map Grid: " << map_mem / 1024.0 << " KB" << std::endl;
+    std::cout << "Trees (Nodes): " << tree_mem / 1024.0 << " KB" << std::endl;
+    std::cout << "Total Estimated: " << (map_mem + tree_mem) / 1024.0 << " KB" << std::endl;
+}
 
 int main() {
-    srand(time(nullptr));  // legacy (can be removed if you fully switch to mt19937)
-    BiRRT planner;
-    planner.run();
+    srand(time(0));
+    
+    // 1. Load the map
+    std::ifstream file("map/map.txt");
+    if (!file.is_open()) {
+        std::cerr << "Error: map.txt not found!" << std::endl;
+        return 1;
+    }
+    for (int y = 0; y < MAP_SIZE; y++) {
+        for (int x = 0; x < MAP_SIZE; x++) {
+            int val;
+            file >> val;
+            map_memory[x][y] = (val == 1);
+        }
+    }
+    file.close();
+
+    // 2. Initialize Trees
+    start_node = {2, 2, -1};
+    goal_node = {MAP_RANGE - 5, MAP_RANGE - 5, -1};
+    start_tree.push_back(start_node);
+    goal_tree.push_back(goal_node);
+
+    // 3. Main Loop
+    std::cout << "Planning..." << std::endl;
+    for (int i = 0; i < 10000 && !done_flag; i++) {
+        Node rand_s = get_random_point(goal_node, 3);
+        extend_branch(find_nearest_node(rand_s), rand_s);
+        if (done_flag) break;
+    }
+
+    if (done_flag) {
+        print_memory_stats();
+    }
+    else std::cout << "Failed to find path." << std::endl;
+
+    extract_path();
+    save_all_nodes();
+
+    return 0;
 }

@@ -1,6 +1,6 @@
 import numpy as np
 
-def verify_path(map_file="map/map_3D.txt", path_file="tree/path"):
+def verify_path(map_file="map/map.txt", path_file="tree/path"):
     # 1. Load the Map into a set for O(1) lookup
     obstacles = set()
     with open(map_file, "r") as f:
