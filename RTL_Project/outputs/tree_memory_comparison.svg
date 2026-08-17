@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="520" viewBox="0 0 1240 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="620.0" y="30" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#1F2933">Logical Tree + Path Memory Usage</text>
+<text x="620.0" y="54" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="middle" fill="#52606D"></text>
+<text x="25" y="270.0" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2933" transform="rotate(-90 25 270.0)">Logical Memory (kB)</text>
+<rect x="300.00" y="76.00" width="18.00" height="13.00" fill="#2563EB" stroke="white" stroke-width="0.5"/>
+<rect x="300.00" y="71.00" width="18.00" height="5.00" fill="#93C5FD" stroke="white" stroke-width="0.5"/>
+<text x="326" y="85" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2933">Optimized CPU</text>
+<rect x="555.00" y="76.00" width="18.00" height="13.00" fill="#D1495B" stroke="white" stroke-width="0.5"/>
+<rect x="555.00" y="71.00" width="18.00" height="5.00" fill="#F4A6AE" stroke="white" stroke-width="0.5"/>
+<text x="581" y="85" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2933">Conventional CPU</text>
+<rect x="830.00" y="76.00" width="18.00" height="13.00" fill="#0F8B6D" stroke="white" stroke-width="0.5"/>
+<rect x="830.00" y="71.00" width="18.00" height="5.00" fill="#8BD3C7" stroke="white" stroke-width="0.5"/>
+<text x="856" y="85" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" text-anchor="start" fill="#1F2933">RTL accelerator</text>
+<text x="344.5" y="116" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2933">Apple M4 Pro</text>
+<line x1="82.00" y1="404.00" x2="607.00" y2="404.00" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="409.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">0</text>
+<line x1="82.00" y1="365.14" x2="607.00" y2="365.14" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="370.14285714285717" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">5</text>
+<line x1="82.00" y1="326.29" x2="607.00" y2="326.29" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="331.2857142857143" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">10</text>
+<line x1="82.00" y1="287.43" x2="607.00" y2="287.43" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="292.42857142857144" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">15</text>
+<line x1="82.00" y1="248.57" x2="607.00" y2="248.57" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="253.57142857142858" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">20</text>
+<line x1="82.00" y1="209.71" x2="607.00" y2="209.71" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="214.71428571428572" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">25</text>
+<line x1="82.00" y1="170.86" x2="607.00" y2="170.86" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="175.85714285714286" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">30</text>
+<line x1="82.00" y1="132.00" x2="607.00" y2="132.00" stroke="#D7DEE7" stroke-width="1"/>
+<text x="71.0" y="137.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" text-anchor="end" fill="#52606D">35</text>
+<line x1="82.00" y1="132.00" x2="82.00" y2="404.00" stroke="#52606D" stroke-width="1.5"/>
+<line x1="82.00" y1="404.00" x2="607.00" y2="404.00" stroke="#52606D" stroke-width="1.5"/>
+<rect x="113.50" y="181.43" width="34.00" height="222.57" fill="#2563EB" stroke="none" stroke-width="0"/>
+<rect x="113.50" y="179.94" width="34.00" height="1.49" fill="#93C5FD" stroke="white" stroke-width="0.8"/>
+<line x1="130.50" y1="176.15" x2="130.50" y2="183.72" stroke="#52606D" stroke-width="1.5"/>
+<line x1="124.50" y1="176.15" x2="136.50" y2="176.15" stroke="#52606D" stroke-width="1.5"/>
+<line x1="124.50" y1="183.72" x2="136.50" y2="183.72" stroke="#52606D" stroke-width="1.5"/>
+<text x="130.5" y="168.15097295920364" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">28.83</text>
+<rect x="152.50" y="341.77" width="34.00" height="62.23" fill="#D1495B" stroke="none" stroke-width="0"/>
+<rect x="152.50" y="330.82" width="34.00" height="10.95" fill="#F4A6AE" stroke="white" stroke-width="0.8"/>
+<line x1="169.50" y1="328.01" x2="169.50" y2="333.64" stroke="#52606D" stroke-width="1.5"/>
+<line x1="163.50" y1="328.01" x2="175.50" y2="328.01" stroke="#52606D" stroke-width="1.5"/>
+<line x1="163.50" y1="333.64" x2="175.50" y2="333.64" stroke="#52606D" stroke-width="1.5"/>
+<text x="169.5" y="320.0068202040387" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">9.42</text>
+<rect x="191.50" y="212.17" width="34.00" height="191.83" fill="#0F8B6D" stroke="none" stroke-width="0"/>
+<rect x="191.50" y="210.68" width="34.00" height="1.49" fill="#8BD3C7" stroke="white" stroke-width="0.8"/>
+<line x1="208.50" y1="198.20" x2="208.50" y2="223.16" stroke="#52606D" stroke-width="1.5"/>
+<line x1="202.50" y1="198.20" x2="214.50" y2="198.20" stroke="#52606D" stroke-width="1.5"/>
+<line x1="202.50" y1="223.16" x2="214.50" y2="223.16" stroke="#52606D" stroke-width="1.5"/>
+<text x="208.5" y="190.20498463546136" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">24.88</text>
+<text x="169.5" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2933">30% obstacles</text>
+<text x="169.5" y="455" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52606D">RTL/Opt = 0.86x</text>
+<rect x="288.50" y="196.11" width="34.00" height="207.89" fill="#2563EB" stroke="none" stroke-width="0"/>
+<rect x="288.50" y="194.33" width="34.00" height="1.78" fill="#93C5FD" stroke="white" stroke-width="0.8"/>
+<line x1="305.50" y1="187.68" x2="305.50" y2="200.97" stroke="#52606D" stroke-width="1.5"/>
+<line x1="299.50" y1="187.68" x2="311.50" y2="187.68" stroke="#52606D" stroke-width="1.5"/>
+<line x1="299.50" y1="200.97" x2="311.50" y2="200.97" stroke="#52606D" stroke-width="1.5"/>
+<text x="305.5" y="179.68480402520677" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">26.98</text>
+<rect x="327.50" y="336.56" width="34.00" height="67.44" fill="#D1495B" stroke="none" stroke-width="0"/>
+<rect x="327.50" y="324.97" width="34.00" height="11.58" fill="#F4A6AE" stroke="white" stroke-width="0.8"/>
+<line x1="344.50" y1="322.99" x2="344.50" y2="326.96" stroke="#52606D" stroke-width="1.5"/>
+<line x1="338.50" y1="322.99" x2="350.50" y2="322.99" stroke="#52606D" stroke-width="1.5"/>
+<line x1="338.50" y1="326.96" x2="350.50" y2="326.96" stroke="#52606D" stroke-width="1.5"/>
+<text x="344.5" y="314.9887420964249" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">10.17</text>
+<rect x="366.50" y="224.62" width="34.00" height="179.38" fill="#0F8B6D" stroke="none" stroke-width="0"/>
+<rect x="366.50" y="222.84" width="34.00" height="1.78" fill="#8BD3C7" stroke="white" stroke-width="0.8"/>
+<line x1="383.50" y1="210.49" x2="383.50" y2="235.20" stroke="#52606D" stroke-width="1.5"/>
+<line x1="377.50" y1="210.49" x2="389.50" y2="210.49" stroke="#52606D" stroke-width="1.5"/>
+<line x1="377.50" y1="235.20" x2="389.50" y2="235.20" stroke="#52606D" stroke-width="1.5"/>
+<text x="383.5" y="202.486699865578" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">23.31</text>
+<text x="344.5" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2933">50% obstacles</text>
+<text x="344.5" y="455" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52606D">RTL/Opt = 0.86x</text>
+<rect x="463.50" y="247.23" width="34.00" height="156.77" fill="#2563EB" stroke="none" stroke-width="0"/>
+<rect x="463.50" y="245.32" width="34.00" height="1.91" fill="#93C5FD" stroke="white" stroke-width="0.8"/>
+<line x1="480.50" y1="239.77" x2="480.50" y2="250.86" stroke="#52606D" stroke-width="1.5"/>
+<line x1="474.50" y1="239.77" x2="486.50" y2="239.77" stroke="#52606D" stroke-width="1.5"/>
+<line x1="474.50" y1="250.86" x2="486.50" y2="250.86" stroke="#52606D" stroke-width="1.5"/>
+<text x="480.5" y="231.7727557234448" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">20.42</text>
+<rect x="502.50" y="332.92" width="34.00" height="71.08" fill="#D1495B" stroke="none" stroke-width="0"/>
+<rect x="502.50" y="320.71" width="34.00" height="12.21" fill="#F4A6AE" stroke="white" stroke-width="0.8"/>
+<line x1="519.50" y1="318.96" x2="519.50" y2="322.46" stroke="#52606D" stroke-width="1.5"/>
+<line x1="513.50" y1="318.96" x2="525.50" y2="318.96" stroke="#52606D" stroke-width="1.5"/>
+<line x1="513.50" y1="322.46" x2="525.50" y2="322.46" stroke="#52606D" stroke-width="1.5"/>
+<text x="519.5" y="310.96338876760177" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">10.72</text>
+<rect x="541.50" y="287.38" width="34.00" height="116.62" fill="#0F8B6D" stroke="none" stroke-width="0"/>
+<rect x="541.50" y="285.52" width="34.00" height="1.87" fill="#8BD3C7" stroke="white" stroke-width="0.8"/>
+<line x1="558.50" y1="268.66" x2="558.50" y2="302.37" stroke="#52606D" stroke-width="1.5"/>
+<line x1="552.50" y1="268.66" x2="564.50" y2="268.66" stroke="#52606D" stroke-width="1.5"/>
+<line x1="552.50" y1="302.37" x2="564.50" y2="302.37" stroke="#52606D" stroke-width="1.5"/>
+<text x="558.5" y="260.6645388343779" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">15.25</text>
+<text x="519.5" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2933">70% obstacles</text>
+<text x="519.5" y="455" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52606D">RTL/Opt = 0.75x</text>
+<text x="939.5" y="116" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2933">Intel Core Ultra 7</text>
+<line x1="677.00" y1="404.00" x2="1202.00" y2="404.00" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="365.14" x2="1202.00" y2="365.14" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="326.29" x2="1202.00" y2="326.29" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="287.43" x2="1202.00" y2="287.43" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="248.57" x2="1202.00" y2="248.57" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="209.71" x2="1202.00" y2="209.71" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="170.86" x2="1202.00" y2="170.86" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="132.00" x2="1202.00" y2="132.00" stroke="#D7DEE7" stroke-width="1"/>
+<line x1="677.00" y1="132.00" x2="677.00" y2="404.00" stroke="#52606D" stroke-width="1.5"/>
+<line x1="677.00" y1="404.00" x2="1202.00" y2="404.00" stroke="#52606D" stroke-width="1.5"/>
+<rect x="708.50" y="179.94" width="34.00" height="224.06" fill="#2563EB" stroke="none" stroke-width="0"/>
+<rect x="708.50" y="178.44" width="34.00" height="1.50" fill="#93C5FD" stroke="white" stroke-width="0.8"/>
+<line x1="725.50" y1="176.03" x2="725.50" y2="180.85" stroke="#52606D" stroke-width="1.5"/>
+<line x1="719.50" y1="176.03" x2="731.50" y2="176.03" stroke="#52606D" stroke-width="1.5"/>
+<line x1="719.50" y1="180.85" x2="731.50" y2="180.85" stroke="#52606D" stroke-width="1.5"/>
+<text x="725.5" y="168.03450715637234" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">29.02</text>
+<rect x="747.50" y="341.90" width="34.00" height="62.10" fill="#D1495B" stroke="none" stroke-width="0"/>
+<rect x="747.50" y="330.96" width="34.00" height="10.94" fill="#F4A6AE" stroke="white" stroke-width="0.8"/>
+<line x1="764.50" y1="329.86" x2="764.50" y2="332.05" stroke="#52606D" stroke-width="1.5"/>
+<line x1="758.50" y1="329.86" x2="770.50" y2="329.86" stroke="#52606D" stroke-width="1.5"/>
+<line x1="758.50" y1="332.05" x2="770.50" y2="332.05" stroke="#52606D" stroke-width="1.5"/>
+<text x="764.5" y="321.8597884877419" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">9.40</text>
+<rect x="786.50" y="212.17" width="34.00" height="191.83" fill="#0F8B6D" stroke="none" stroke-width="0"/>
+<rect x="786.50" y="210.68" width="34.00" height="1.49" fill="#8BD3C7" stroke="white" stroke-width="0.8"/>
+<line x1="803.50" y1="198.20" x2="803.50" y2="223.16" stroke="#52606D" stroke-width="1.5"/>
+<line x1="797.50" y1="198.20" x2="809.50" y2="198.20" stroke="#52606D" stroke-width="1.5"/>
+<line x1="797.50" y1="223.16" x2="809.50" y2="223.16" stroke="#52606D" stroke-width="1.5"/>
+<text x="803.5" y="190.20498463546136" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">24.88</text>
+<text x="764.5" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2933">30% obstacles</text>
+<text x="764.5" y="455" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52606D">RTL/Opt = 0.86x</text>
+<rect x="883.50" y="196.58" width="34.00" height="207.42" fill="#2563EB" stroke="none" stroke-width="0"/>
+<rect x="883.50" y="194.79" width="34.00" height="1.79" fill="#93C5FD" stroke="white" stroke-width="0.8"/>
+<line x1="900.50" y1="191.03" x2="900.50" y2="198.56" stroke="#52606D" stroke-width="1.5"/>
+<line x1="894.50" y1="191.03" x2="906.50" y2="191.03" stroke="#52606D" stroke-width="1.5"/>
+<line x1="894.50" y1="198.56" x2="906.50" y2="198.56" stroke="#52606D" stroke-width="1.5"/>
+<text x="900.5" y="183.02620388538466" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">26.92</text>
+<rect x="922.50" y="337.76" width="34.00" height="66.24" fill="#D1495B" stroke="none" stroke-width="0"/>
+<rect x="922.50" y="326.28" width="34.00" height="11.48" fill="#F4A6AE" stroke="white" stroke-width="0.8"/>
+<line x1="939.50" y1="324.17" x2="939.50" y2="328.38" stroke="#52606D" stroke-width="1.5"/>
+<line x1="933.50" y1="324.17" x2="945.50" y2="324.17" stroke="#52606D" stroke-width="1.5"/>
+<line x1="933.50" y1="328.38" x2="945.50" y2="328.38" stroke="#52606D" stroke-width="1.5"/>
+<text x="939.5" y="316.1701584455568" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">10.00</text>
+<rect x="961.50" y="224.62" width="34.00" height="179.38" fill="#0F8B6D" stroke="none" stroke-width="0"/>
+<rect x="961.50" y="222.84" width="34.00" height="1.78" fill="#8BD3C7" stroke="white" stroke-width="0.8"/>
+<line x1="978.50" y1="210.49" x2="978.50" y2="235.20" stroke="#52606D" stroke-width="1.5"/>
+<line x1="972.50" y1="210.49" x2="984.50" y2="210.49" stroke="#52606D" stroke-width="1.5"/>
+<line x1="972.50" y1="235.20" x2="984.50" y2="235.20" stroke="#52606D" stroke-width="1.5"/>
+<text x="978.5" y="202.486699865578" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">23.31</text>
+<text x="939.5" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2933">50% obstacles</text>
+<text x="939.5" y="455" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52606D">RTL/Opt = 0.87x</text>
+<rect x="1058.50" y="255.85" width="34.00" height="148.15" fill="#2563EB" stroke="none" stroke-width="0"/>
+<rect x="1058.50" y="253.97" width="34.00" height="1.88" fill="#93C5FD" stroke="white" stroke-width="0.8"/>
+<line x1="1075.50" y1="248.19" x2="1075.50" y2="259.75" stroke="#52606D" stroke-width="1.5"/>
+<line x1="1069.50" y1="248.19" x2="1081.50" y2="248.19" stroke="#52606D" stroke-width="1.5"/>
+<line x1="1069.50" y1="259.75" x2="1081.50" y2="259.75" stroke="#52606D" stroke-width="1.5"/>
+<text x="1075.5" y="240.18926200896192" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">19.31</text>
+<rect x="1097.50" y="335.95" width="34.00" height="68.05" fill="#D1495B" stroke="none" stroke-width="0"/>
+<rect x="1097.50" y="323.97" width="34.00" height="11.98" fill="#F4A6AE" stroke="white" stroke-width="0.8"/>
+<line x1="1114.50" y1="317.05" x2="1114.50" y2="330.90" stroke="#52606D" stroke-width="1.5"/>
+<line x1="1108.50" y1="317.05" x2="1120.50" y2="317.05" stroke="#52606D" stroke-width="1.5"/>
+<line x1="1108.50" y1="330.90" x2="1120.50" y2="330.90" stroke="#52606D" stroke-width="1.5"/>
+<text x="1114.5" y="309.0475485820316" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">10.30</text>
+<rect x="1136.50" y="287.38" width="34.00" height="116.62" fill="#0F8B6D" stroke="none" stroke-width="0"/>
+<rect x="1136.50" y="285.52" width="34.00" height="1.87" fill="#8BD3C7" stroke="white" stroke-width="0.8"/>
+<line x1="1153.50" y1="268.66" x2="1153.50" y2="302.37" stroke="#52606D" stroke-width="1.5"/>
+<line x1="1147.50" y1="268.66" x2="1159.50" y2="268.66" stroke="#52606D" stroke-width="1.5"/>
+<line x1="1147.50" y1="302.37" x2="1159.50" y2="302.37" stroke="#52606D" stroke-width="1.5"/>
+<text x="1153.5" y="260.6645388343779" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1F2933">15.25</text>
+<text x="1114.5" y="431" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2933">70% obstacles</text>
+<text x="1114.5" y="455" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#52606D">RTL/Opt = 0.79x</text>
+<text x="620.0" y="502" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#1F2933">Obstacle Density</text>
+</svg>

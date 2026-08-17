@@ -1,0 +1,77 @@
+# Version:1.0 MMMC View Definition File
+# Do Not Remove Above Line
+
+# Resolve all inputs from this file so the same directory tree works locally
+# and after upload to ~/RTL_Project/04_APR on the lab server.
+set VIEW_DIR       [file dirname [file normalize [info script]]]
+set PDK_DIR        [file normalize [file join $VIEW_DIR .. .. CBDK_IC_Contest_v2.5]]
+set CONSTRAINT_SDC [file normalize [file join $VIEW_DIR RRT_TOP_SYN.sdc]]
+set SLOW_LIB       [file join $PDK_DIR SOCE lib slow.lib]
+set FAST_LIB       [file join $PDK_DIR SOCE lib fast.lib]
+
+foreach required_file [list $SLOW_LIB $FAST_LIB $CONSTRAINT_SDC] {
+    if {![file readable $required_file]} {
+        error "RRT_TOP.view: required file is missing or unreadable: $required_file"
+    }
+}
+
+# PVT timing libraries supplied by CBDK_IC_Contest_v2.5:
+#   slow: 1.08 V,  125 C (late/setup)
+#   fast: 1.32 V,  -40 C (early/hold)
+create_library_set -name LIB_SLOW \
+    -timing [list $SLOW_LIB]
+
+create_library_set -name LIB_FAST \
+    -timing [list $FAST_LIB]
+
+# CBDK v2.5 does not provide the Cadence qrcTechFile/capTable or Celtic .cdB
+# shown in the older course example. These corners therefore use the R/C
+# values embedded in the technology LEF loaded by the Innovus init script.
+create_rc_corner -name RC_WORST \
+    -preRoute_res 1.0 \
+    -preRoute_cap 1.0 \
+    -preRoute_clkres 0.0 \
+    -preRoute_clkcap 0.0 \
+    -postRoute_res 1.0 \
+    -postRoute_cap 1.0 \
+    -postRoute_xcap 1.0 \
+    -postRoute_clkres 0.0 \
+    -postRoute_clkcap 0.0 \
+    -T 125
+
+create_rc_corner -name RC_BEST \
+    -preRoute_res 1.0 \
+    -preRoute_cap 1.0 \
+    -preRoute_clkres 0.0 \
+    -preRoute_clkcap 0.0 \
+    -postRoute_res 1.0 \
+    -postRoute_cap 1.0 \
+    -postRoute_xcap 1.0 \
+    -postRoute_clkres 0.0 \
+    -postRoute_clkcap 0.0 \
+    -T -40
+
+# Use independent max/setup and min/hold delay corners, matching the course
+# example and avoiding cross-PVT early/late libraries inside one corner.
+create_delay_corner -name DC_SETUP \
+    -library_set LIB_SLOW \
+    -rc_corner RC_WORST
+
+create_delay_corner -name DC_HOLD \
+    -library_set LIB_FAST \
+    -rc_corner RC_BEST
+
+create_constraint_mode -name FUNC \
+    -sdc_files [list $CONSTRAINT_SDC]
+
+create_analysis_view -name VIEW_SETUP \
+    -constraint_mode FUNC \
+    -delay_corner DC_SETUP
+
+create_analysis_view -name VIEW_HOLD \
+    -constraint_mode FUNC \
+    -delay_corner DC_HOLD
+
+set_analysis_view \
+    -setup [list VIEW_SETUP] \
+    -hold  [list VIEW_HOLD]

@@ -1,0 +1,1848 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 50
+        -transition_time
+        -capacitance
+Design : RRT_TOP
+Version: T-2022.03
+Date   : Mon Jul 13 01:44:09 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: fast   Library: fast
+Wire Load Model Mode: top
+
+  Startpoint: u_PE0/rand_y_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/rand_y_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_y_reg_reg[1]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_y_reg_reg[1]/QN (DFFRX4) <-                            0.04      0.13       0.13 r
+  n10291 (net)                                  1         0.01                0.00       0.13 r
+  U11146/B1 (AOI2BB2X1)                                             0.04      0.00       0.13 r
+  U11146/Y (AOI2BB2X1)                                              0.07      0.05       0.18 f
+  n636 (net)                                    1         0.01                0.00       0.18 f
+  u_PE0/rand_y_reg_reg[1]/D (DFFRX4)                                0.07      0.00       0.18 f
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/rand_y_reg_reg[1]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.12
+
+
+  Startpoint: u_PE2/vector_z_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/vector_z_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/vector_z_reg_reg[0]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE2/vector_z_reg_reg[0]/QN (DFFRX4) <-                          0.06      0.15       0.15 r
+  n10139 (net)                                  2         0.03                0.00       0.15 r
+  U9795/A1 (OAI21X2)                                                0.06      0.00       0.15 r
+  U9795/Y (OAI21X2)                                                 0.04      0.04       0.19 f
+  n525 (net)                                    1         0.01                0.00       0.19 f
+  u_PE2/vector_z_reg_reg[0]/D (DFFRX4)                              0.04      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/vector_z_reg_reg[0]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.13
+
+
+  Startpoint: u_PE2/rand_x_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cx_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_x_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_x_reg_reg[4]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n10311 (net)                                  1         0.02                0.00       0.14 r
+  U5236/A (INVX6)                                                   0.05      0.00       0.14 r
+  U5236/Y (INVX6)                                                   0.08      0.06       0.20 f
+  n10372 (net)                                  8         0.14                0.00       0.20 f
+  u_PE2/cx_reg_reg[0]/D (DFFRX4)                                    0.08      0.00       0.20 f
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cx_reg_reg[0]/CK (DFFRX4)                                             0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.14
+
+
+  Startpoint: u_PE3/rand_x_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_x_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_x_reg_reg[5]/Q (DFFRX4) <-                             0.07      0.17       0.17 r
+  u_PE3/rand_x_reg[5] (net)                     3         0.04                0.00       0.17 r
+  u_PE3/cx_reg_reg[1]/D (DFFRX2)                                    0.07      0.00       0.17 r
+  data arrival time                                                                      0.17
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cx_reg_reg[1]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.17
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE0/grid_cnt_reg_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/grid_cnt_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/grid_cnt_reg_reg[3]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE0/grid_cnt_reg_reg[3]/QN (DFFRX4) <-                          0.03      0.13       0.13 r
+  n10262 (net)                                  1         0.01                0.00       0.13 r
+  U10288/A2 (OAI31XL)                                               0.03      0.00       0.13 r
+  U10288/Y (OAI31XL)                                                0.09      0.08       0.20 f
+  n631 (net)                                    1         0.01                0.00       0.20 f
+  u_PE0/grid_cnt_reg_reg[3]/D (DFFRX4)                              0.09      0.00       0.20 f
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/grid_cnt_reg_reg[3]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE2/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n9869 (net)                                   1         0.02                0.00       0.14 r
+  U5022/A (INVX6)                                                   0.05      0.00       0.14 r
+  U5022/Y (INVX6)                                                   0.06      0.05       0.19 f
+  n10374 (net)                                  7         0.10                0.00       0.19 f
+  u_PE2/cz_reg_reg[0]/D (DFFRX2)                                    0.06      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cz_reg_reg[0]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.01       0.04
+  data required time                                                                     0.04
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.04
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE2/vector_x_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/vector_x_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/vector_x_reg_reg[0]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE2/vector_x_reg_reg[0]/QN (DFFRX4) <-                          0.06      0.14       0.14 r
+  n10133 (net)                                  2         0.03                0.00       0.14 r
+  U5519/A1 (OAI211X1)                                               0.06      0.00       0.14 r
+  U5519/Y (OAI211X1)                                                0.07      0.07       0.21 f
+  n527 (net)                                    1         0.01                0.00       0.21 f
+  u_PE2/vector_x_reg_reg[0]/D (DFFRX4)                              0.07      0.00       0.21 f
+  data arrival time                                                                      0.21
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/vector_x_reg_reg[0]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.21
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n9566 (net)                                   1         0.02                0.00       0.14 r
+  U5034/A (INVX6)                                                   0.05      0.00       0.14 r
+  U5034/Y (INVX6)                                                   0.06      0.05       0.19 f
+  n10377 (net)                                  7         0.11                0.00       0.19 f
+  u_PE0/cz_reg_reg[0]/D (DFFRX2)                                    0.06      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cz_reg_reg[0]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.01       0.04
+  data required time                                                                     0.04
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.04
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cz_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[5]/QN (DFFRX4) <-                            0.04      0.10       0.10 f
+  n9818 (net)                                   1         0.02                0.00       0.10 f
+  U5021/A (INVX6)                                                   0.04      0.00       0.10 f
+  U5021/Y (INVX6)                                                   0.09      0.06       0.16 r
+  n10381 (net)                                  5         0.08                0.00       0.16 r
+  u_PE0/cz_reg_reg[1]/D (DFFRX1)                                    0.09      0.00       0.16 r
+  data arrival time                                                                      0.16
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cz_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.16
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE1/rand_y_reg_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/cy_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_y_reg_reg[7]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_y_reg_reg[7]/Q (DFFRX4) <-                             0.07      0.17       0.17 r
+  u_PE1/rand_y_reg[7] (net)                     3         0.04                0.00       0.17 r
+  u_PE1/cy_reg_reg[3]/D (DFFRX1)                                    0.07      0.00       0.17 r
+  data arrival time                                                                      0.17
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/cy_reg_reg[3]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.17
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE3/rand_z_reg_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cz_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_z_reg_reg[7]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_z_reg_reg[7]/Q (DFFRX4) <-                             0.07      0.17       0.17 r
+  u_PE3/rand_z_reg[7] (net)                     2         0.04                0.00       0.17 r
+  u_PE3/cz_reg_reg[3]/D (DFFRX1)                                    0.07      0.00       0.17 r
+  data arrival time                                                                      0.17
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cz_reg_reg[3]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.17
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.15
+
+
+  Startpoint: u_PE2/rand_z_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cz_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_z_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_z_reg_reg[5]/QN (DFFRX4) <-                            0.05      0.11       0.11 f
+  n9843 (net)                                   1         0.04                0.00       0.11 f
+  U9266/A (INVX12)                                                  0.05      0.00       0.11 f
+  U9266/Y (INVX12)                                                  0.07      0.05       0.17 r
+  n10369 (net)                                  8         0.12                0.00       0.17 r
+  u_PE2/cz_reg_reg[1]/D (DFFRX1)                                    0.07      0.00       0.17 r
+  data arrival time                                                                      0.17
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cz_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.17
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE0/rand_x_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/rand_x_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_x_reg_reg[1]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_x_reg_reg[1]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n10254 (net)                                  2         0.02                0.00       0.14 r
+  U10319/A1 (OAI21XL)                                               0.05      0.00       0.14 r
+  U10319/Y (OAI21XL)                                                0.09      0.07       0.21 f
+  n644 (net)                                    1         0.01                0.00       0.21 f
+  u_PE0/rand_x_reg_reg[1]/D (DFFRX4)                                0.09      0.00       0.21 f
+  data arrival time                                                                      0.21
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/rand_x_reg_reg[1]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.21
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cz_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[5]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n9818 (net)                                   1         0.02                0.00       0.14 r
+  U5021/A (INVX6)                                                   0.05      0.00       0.14 r
+  U5021/Y (INVX6)                                                   0.05      0.04       0.18 f
+  n10381 (net)                                  5         0.08                0.00       0.18 f
+  u_PE0/cz_reg_reg[1]/D (DFFRX1)                                    0.05      0.00       0.18 f
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cz_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE2/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.04      0.10       0.10 f
+  n9869 (net)                                   1         0.02                0.00       0.10 f
+  U5022/A (INVX6)                                                   0.04      0.00       0.10 f
+  U5022/Y (INVX6)                                                   0.11      0.07       0.18 r
+  n10374 (net)                                  7         0.10                0.00       0.18 r
+  u_PE2/cz_reg_reg[0]/D (DFFRX2)                                    0.11      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cz_reg_reg[0]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE0/vector_x_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/vector_x_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/vector_x_reg_reg[0]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE0/vector_x_reg_reg[0]/QN (DFFRX4) <-                          0.06      0.14       0.14 r
+  n10134 (net)                                  2         0.03                0.00       0.14 r
+  U10336/B1 (OAI2BB2XL)                                             0.06      0.00       0.14 r
+  U10336/Y (OAI2BB2XL)                                              0.08      0.07       0.21 f
+  n779 (net)                                    1         0.01                0.00       0.21 f
+  u_PE0/vector_x_reg_reg[0]/D (DFFRX4)                              0.08      0.00       0.21 f
+  data arrival time                                                                      0.21
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/vector_x_reg_reg[0]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.21
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.04      0.10       0.10 f
+  n9566 (net)                                   1         0.02                0.00       0.10 f
+  U5034/A (INVX6)                                                   0.04      0.00       0.10 f
+  U5034/Y (INVX6)                                                   0.11      0.07       0.18 r
+  n10377 (net)                                  7         0.11                0.00       0.18 r
+  u_PE0/cz_reg_reg[0]/D (DFFRX2)                                    0.11      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cz_reg_reg[0]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE1/gx_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/gx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  u_PE1/gx_reg_reg[1]/CK (DFFRX2)                    0.00      0.00 #     0.00 r
+  u_PE1/gx_reg_reg[1]/QN (DFFRX2) <-                 0.06      0.15       0.15 r
+  n10227 (net)                   1         0.01                0.00       0.15 r
+  U4205/A0 (OAI222X1)                                0.06      0.00       0.15 r
+  U4205/Y (OAI222X1)                                 0.05      0.05       0.20 f
+  n709 (net)                     1         0.01                0.00       0.20 f
+  u_PE1/gx_reg_reg[1]/D (DFFRX2)                     0.05      0.00       0.20 f
+  data arrival time                                                       0.20
+
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  clock uncertainty                                            0.05       0.05
+  u_PE1/gx_reg_reg[1]/CK (DFFRX2)                              0.00       0.05 r
+  library hold time                                           -0.01       0.04
+  data required time                                                      0.04
+  -------------------------------------------------------------------------------
+  data required time                                                      0.04
+  data arrival time                                                      -0.20
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.16
+
+
+  Startpoint: u_PE1/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.05      0.11       0.11 f
+  n9816 (net)                                   1         0.04                0.00       0.11 f
+  U6542/A (INVX12)                                                  0.05      0.00       0.11 f
+  U6542/Y (INVX12)                                                  0.08      0.06       0.17 r
+  n10385 (net)                                  9         0.15                0.00       0.17 r
+  u_PE1/cz_reg_reg[0]/D (DFFRX1)                                    0.08      0.00       0.17 r
+  data arrival time                                                                      0.17
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/cz_reg_reg[0]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.17
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.16
+
+
+  Startpoint: u_PE3/grid_cnt_reg_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/grid_cnt_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/grid_cnt_reg_reg[2]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE3/grid_cnt_reg_reg[2]/QN (DFFRX4) <-                          0.08      0.16       0.16 r
+  n9604 (net)                                   3         0.05                0.00       0.16 r
+  U7901/A1 (OAI22XL)                                                0.08      0.00       0.16 r
+  U7901/Y (OAI22XL)                                                 0.08      0.06       0.22 f
+  n376 (net)                                    1         0.01                0.00       0.22 f
+  u_PE3/grid_cnt_reg_reg[2]/D (DFFRX4)                              0.08      0.00       0.22 f
+  data arrival time                                                                      0.22
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/grid_cnt_reg_reg[2]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.22
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cz_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[6]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[6]/Q (DFFRX4) <-                             0.08      0.18       0.18 r
+  n9793 (net)                                   4         0.05                0.00       0.18 r
+  u_PE0/cz_reg_reg[2]/D (DFFRX1)                                    0.08      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cz_reg_reg[2]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE2/rand_z_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cz_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_z_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_z_reg_reg[5]/QN (DFFRX4) <-                            0.07      0.15       0.15 r
+  n9843 (net)                                   1         0.04                0.00       0.15 r
+  U9266/A (INVX12)                                                  0.07      0.00       0.15 r
+  U9266/Y (INVX12)                                                  0.04      0.04       0.19 f
+  n10369 (net)                                  8         0.12                0.00       0.19 f
+  u_PE2/cz_reg_reg[1]/D (DFFRX1)                                    0.04      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cz_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.02       0.03
+  data required time                                                                     0.03
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.03
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE1/rand_y_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_y_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_y_reg_reg[4]/QN (DFFRX4) <-                            0.06      0.15       0.15 r
+  n3950 (net)                                   2         0.03                0.00       0.15 r
+  U11052/A1 (OAI21XL)                                               0.06      0.00       0.15 r
+  U11052/Y (OAI21XL)                                                0.09      0.07       0.22 f
+  u_PE1/rand_y[4] (net)                         1         0.01                0.00       0.22 f
+  u_PE1/rand_y_reg_reg[4]/D (DFFRX4)                                0.09      0.00       0.22 f
+  data arrival time                                                                      0.22
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/rand_y_reg_reg[4]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.00       0.05
+  data required time                                                                     0.05
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.05
+  data arrival time                                                                     -0.22
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE0/rand_x_reg_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cx_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_x_reg_reg[7]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_x_reg_reg[7]/Q (DFFRX4) <-                             0.09      0.18       0.18 r
+  n3954 (net)                                   4         0.05                0.00       0.18 r
+  u_PE0/cx_reg_reg[3]/D (DFFRX1)                                    0.09      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cx_reg_reg[3]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE3/rand_y_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cy_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_y_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_y_reg_reg[5]/Q (DFFRX4) <-                             0.09      0.18       0.18 r
+  u_PE3/rand_y_reg[5] (net)                     3         0.05                0.00       0.18 r
+  u_PE3/cy_reg_reg[1]/D (DFFRX1)                                    0.09      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cy_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE0/rand_x_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_x_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_x_reg_reg[5]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n10305 (net)                                  1         0.02                0.00       0.14 r
+  U8937/A (INVX6)                                                   0.05      0.00       0.14 r
+  U8937/Y (INVX6)                                                   0.06      0.05       0.19 f
+  n10378 (net)                                  7         0.11                0.00       0.19 f
+  u_PE0/cx_reg_reg[1]/D (DFFRX1)                                    0.06      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cx_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE1/rand_x_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/cx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_x_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_x_reg_reg[5]/QN (DFFRX4) <-                            0.05      0.14       0.14 r
+  n9817 (net)                                   1         0.02                0.00       0.14 r
+  U8333/A (INVX6)                                                   0.05      0.00       0.14 r
+  U8333/Y (INVX6)                                                   0.06      0.05       0.19 f
+  n10386 (net)                                  8         0.11                0.00       0.19 f
+  u_PE1/cx_reg_reg[1]/D (DFFRX1)                                    0.06      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/cx_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/rand_z_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[1]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[1]/QN (DFFRX4) <-                            0.10      0.17       0.17 r
+  n9564 (net)                                   4         0.06                0.00       0.17 r
+  U11150/B1 (AOI2BB2X1)                                             0.10      0.00       0.17 r
+  U11150/Y (AOI2BB2X1)                                              0.07      0.06       0.23 f
+  n640 (net)                                    1         0.01                0.00       0.23 f
+  u_PE0/rand_z_reg_reg[1]/D (DFFRX4)                                0.07      0.00       0.23 f
+  data arrival time                                                                      0.23
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/rand_z_reg_reg[1]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.23
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE1/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.07      0.15       0.15 r
+  n9816 (net)                                   1         0.04                0.00       0.15 r
+  U6542/A (INVX12)                                                  0.07      0.00       0.15 r
+  U6542/Y (INVX12)                                                  0.05      0.04       0.20 f
+  n10385 (net)                                  9         0.15                0.00       0.20 f
+  u_PE1/cz_reg_reg[0]/D (DFFRX1)                                    0.05      0.00       0.20 f
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/cz_reg_reg[0]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE1/grid_cnt_reg_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/grid_cnt_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/grid_cnt_reg_reg[2]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE1/grid_cnt_reg_reg[2]/QN (DFFRX4) <-                          0.09      0.16       0.16 r
+  n10355 (net)                                  4         0.05                0.00       0.16 r
+  U10314/A1 (OAI22XL)                                               0.09      0.00       0.16 r
+  U10314/Y (OAI22XL)                                                0.08      0.06       0.23 f
+  n741 (net)                                    1         0.01                0.00       0.23 f
+  u_PE1/grid_cnt_reg_reg[2]/D (DFFRX4)                              0.08      0.00       0.23 f
+  data arrival time                                                                      0.23
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/grid_cnt_reg_reg[2]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.23
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE3/rand_x_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/rand_x_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_x_reg_reg[0]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_x_reg_reg[0]/QN (DFFRX4) <-                            0.07      0.15       0.15 r
+  n10344 (net)                                  3         0.04                0.00       0.15 r
+  U10321/A1 (OAI21XL)                                               0.07      0.00       0.15 r
+  U10321/Y (OAI21XL)                                                0.08      0.07       0.23 f
+  n390 (net)                                    1         0.01                0.00       0.23 f
+  u_PE3/rand_x_reg_reg[0]/D (DFFRX4)                                0.08      0.00       0.23 f
+  data arrival time                                                                      0.23
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/rand_x_reg_reg[0]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.23
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE0/rand_x_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_x_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_x_reg_reg[5]/QN (DFFRX4) <-                            0.04      0.10       0.10 f
+  n10305 (net)                                  1         0.02                0.00       0.10 f
+  U8937/A (INVX6)                                                   0.04      0.00       0.10 f
+  U8937/Y (INVX6)                                                   0.11      0.08       0.18 r
+  n10378 (net)                                  7         0.11                0.00       0.18 r
+  u_PE0/cx_reg_reg[1]/D (DFFRX1)                                    0.11      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cx_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE1/rand_x_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/cx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_x_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_x_reg_reg[5]/QN (DFFRX4) <-                            0.04      0.10       0.10 f
+  n9817 (net)                                   1         0.02                0.00       0.10 f
+  U8333/A (INVX6)                                                   0.04      0.00       0.10 f
+  U8333/Y (INVX6)                                                   0.12      0.08       0.18 r
+  n10386 (net)                                  8         0.11                0.00       0.18 r
+  u_PE1/cx_reg_reg[1]/D (DFFRX1)                                    0.12      0.00       0.18 r
+  data arrival time                                                                      0.18
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/cx_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.18
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE3/rand_x_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cx_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_x_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_x_reg_reg[5]/Q (DFFRX4) <-                             0.05      0.21       0.21 f
+  u_PE3/rand_x_reg[5] (net)                     3         0.04                0.00       0.21 f
+  u_PE3/cx_reg_reg[1]/D (DFFRX2)                                    0.05      0.00       0.21 f
+  data arrival time                                                                      0.21
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cx_reg_reg[1]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.01       0.04
+  data required time                                                                     0.04
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.04
+  data arrival time                                                                     -0.21
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE2/vector_z_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/vector_z_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/vector_z_reg_reg[0]/CK (DFFRX4)                             0.00      0.00 #     0.00 r
+  u_PE2/vector_z_reg_reg[0]/QN (DFFRX4) <-                          0.05      0.11       0.11 f
+  n10139 (net)                                  2         0.03                0.00       0.11 f
+  U9795/A1 (OAI21X2)                                                0.05      0.00       0.11 f
+  U9795/Y (OAI21X2)                                                 0.06      0.08       0.19 r
+  n525 (net)                                    1         0.01                0.00       0.19 r
+  u_PE2/vector_z_reg_reg[0]/D (DFFRX4)                              0.06      0.00       0.19 r
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/vector_z_reg_reg[0]/CK (DFFRX4)                                       0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE1/rand_y_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/cy_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_y_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_y_reg_reg[5]/QN (DFFRX4) <-                            0.04      0.14       0.14 r
+  n9813 (net)                                   1         0.02                0.00       0.14 r
+  U5019/A (INVX4)                                                   0.04      0.00       0.14 r
+  U5019/Y (INVX4)                                                   0.08      0.06       0.19 f
+  n10387 (net)                                  6         0.09                0.00       0.19 f
+  u_PE1/cy_reg_reg[1]/D (DFFRX1)                                    0.08      0.00       0.19 f
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/cy_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.17
+
+
+  Startpoint: u_PE2/rand_x_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/rand_x_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_x_reg_reg[0]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_x_reg_reg[0]/QN (DFFRX4) <-                            0.08      0.16       0.16 r
+  n10256 (net)                                  3         0.05                0.00       0.16 r
+  U11438/A1 (OAI21XL)                                               0.08      0.00       0.16 r
+  U11438/Y (OAI21XL)                                                0.08      0.07       0.23 f
+  n523 (net)                                    1         0.01                0.00       0.23 f
+  u_PE2/rand_x_reg_reg[0]/D (DFFRX4)                                0.08      0.00       0.23 f
+  data arrival time                                                                      0.23
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/rand_x_reg_reg[0]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.23
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE3/rand_x_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cx_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_x_reg_reg[4]/CK (DFFRX2)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_x_reg_reg[4]/QN (DFFRX2) <-                            0.06      0.13       0.13 f
+  n9814 (net)                                   1         0.02                0.00       0.13 f
+  U6158/A (INVX6)                                                   0.06      0.00       0.13 f
+  U6158/Y (INVX6)                                                   0.09      0.07       0.20 r
+  n10363 (net)                                  5         0.08                0.00       0.20 r
+  u_PE3/cx_reg_reg[0]/D (DFFRX2)                                    0.09      0.00       0.20 r
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cx_reg_reg[0]/CK (DFFRX2)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE1/gy_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/gy_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  u_PE1/gy_reg_reg[0]/CK (DFFRX2)                    0.00      0.00 #     0.00 r
+  u_PE1/gy_reg_reg[0]/QN (DFFRX2) <-                 0.06      0.15       0.15 r
+  n10196 (net)                   1         0.01                0.00       0.15 r
+  U5832/A1 (OAI211X1)                                0.06      0.00       0.15 r
+  U5832/Y (OAI211X1)                                 0.07      0.06       0.21 f
+  n704 (net)                     1         0.01                0.00       0.21 f
+  u_PE1/gy_reg_reg[0]/D (DFFRX2)                     0.07      0.00       0.21 f
+  data arrival time                                                       0.21
+
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  clock uncertainty                                            0.05       0.05
+  u_PE1/gy_reg_reg[0]/CK (DFFRX2)                              0.00       0.05 r
+  library hold time                                           -0.01       0.04
+  data required time                                                      0.04
+  -------------------------------------------------------------------------------
+  data required time                                                      0.04
+  data arrival time                                                      -0.21
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.18
+
+
+  Startpoint: u_PE2/rand_z_reg_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cz_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_z_reg_reg[6]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_z_reg_reg[6]/QN (DFFRX4) <-                            0.06      0.15       0.15 r
+  n9824 (net)                                   2         0.03                0.00       0.15 r
+  U4976/A (INVX4)                                                   0.06      0.00       0.15 r
+  U4976/Y (INVX4)                                                   0.07      0.05       0.20 f
+  n10368 (net)                                  5         0.08                0.00       0.20 f
+  u_PE2/cz_reg_reg[2]/D (DFFRX1)                                    0.07      0.00       0.20 f
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cz_reg_reg[2]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE0/rand_z_reg_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/cz_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/rand_z_reg_reg[7]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE0/rand_z_reg_reg[7]/QN (DFFRX4) <-                            0.04      0.13       0.13 r
+  n9833 (net)                                   1         0.02                0.00       0.13 r
+  U5044/A (INVX3)                                                   0.04      0.00       0.13 r
+  U5044/Y (INVX3)                                                   0.09      0.06       0.20 f
+  n10376 (net)                                  5         0.07                0.00       0.20 f
+  u_PE0/cz_reg_reg[3]/D (DFFRX1)                                    0.09      0.00       0.20 f
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/cz_reg_reg[3]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE2/rand_x_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/rand_x_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_x_reg_reg[1]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_x_reg_reg[1]/QN (DFFRX4) <-                            0.08      0.16       0.16 r
+  n10257 (net)                                  3         0.05                0.00       0.16 r
+  U11435/A1 (OAI21XL)                                               0.08      0.00       0.16 r
+  U11435/Y (OAI21XL)                                                0.08      0.08       0.24 f
+  n522 (net)                                    1         0.01                0.00       0.24 f
+  u_PE2/rand_x_reg_reg[1]/D (DFFRX4)                                0.08      0.00       0.24 f
+  data arrival time                                                                      0.24
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/rand_x_reg_reg[1]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.24
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE3/rand_x_reg_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/rand_x_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_x_reg_reg[2]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_x_reg_reg[2]/QN (DFFRX4) <-                            0.08      0.16       0.16 r
+  n10255 (net)                                  3         0.05                0.00       0.16 r
+  U10323/A1 (OAI21XL)                                               0.08      0.00       0.16 r
+  U10323/Y (OAI21XL)                                                0.08      0.08       0.24 f
+  n388 (net)                                    1         0.01                0.00       0.24 f
+  u_PE3/rand_x_reg_reg[2]/D (DFFRX4)                                0.08      0.00       0.24 f
+  data arrival time                                                                      0.24
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/rand_x_reg_reg[2]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.24
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE2/rand_z_reg_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE2/cz_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE2/rand_z_reg_reg[6]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE2/rand_z_reg_reg[6]/QN (DFFRX4) <-                            0.05      0.11       0.11 f
+  n9824 (net)                                   2         0.03                0.00       0.11 f
+  U4976/A (INVX4)                                                   0.05      0.00       0.11 f
+  U4976/Y (INVX4)                                                   0.12      0.08       0.19 r
+  n10368 (net)                                  5         0.08                0.00       0.19 r
+  u_PE2/cz_reg_reg[2]/D (DFFRX1)                                    0.12      0.00       0.19 r
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE2/cz_reg_reg[2]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE1/rand_z_reg_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE1/rand_z_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE1/rand_z_reg_reg[3]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE1/rand_z_reg_reg[3]/QN (DFFRX4) <-                            0.11      0.18       0.18 r
+  n10349 (net)                                  5         0.07                0.00       0.18 r
+  U11041/B1 (AOI2BB2X1)                                             0.11      0.00       0.18 r
+  U11041/Y (AOI2BB2X1)                                              0.07      0.06       0.24 f
+  n759 (net)                                    1         0.01                0.00       0.24 f
+  u_PE1/rand_z_reg_reg[3]/D (DFFRX4)                                0.07      0.00       0.24 f
+  data arrival time                                                                      0.24
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE1/rand_z_reg_reg[3]/CK (DFFRX4)                                         0.00       0.05 r
+  library hold time                                                           0.01       0.06
+  data required time                                                                     0.06
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.06
+  data arrival time                                                                     -0.24
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE3/rand_z_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cz_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_z_reg_reg[5]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_z_reg_reg[5]/Q (DFFRX4) <-                             0.11      0.19       0.19 r
+  n3949 (net)                                   5         0.07                0.00       0.19 r
+  u_PE3/cz_reg_reg[1]/D (DFFRX1)                                    0.11      0.00       0.19 r
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cz_reg_reg[1]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE3/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.05      0.11       0.11 f
+  n9863 (net)                                   2         0.04                0.00       0.11 f
+  U5049/A (INVX6)                                                   0.05      0.00       0.11 f
+  U5049/Y (INVX6)                                                   0.11      0.08       0.19 r
+  n10365 (net)                                  7         0.11                0.00       0.19 r
+  u_PE3/cz_reg_reg[0]/D (DFFRX1)                                    0.11      0.00       0.19 r
+  data arrival time                                                                      0.19
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cz_reg_reg[0]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.04       0.01
+  data required time                                                                     0.01
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.01
+  data arrival time                                                                     -0.19
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE0/dist_reg_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/min_dist_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/dist_reg_reg[8]/CK (DFFRX2)                                 0.00      0.00 #     0.00 r
+  u_PE0/dist_reg_reg[8]/QN (DFFRX2) <-                              0.07      0.13       0.13 f
+  n9680 (net)                                   2         0.03                0.00       0.13 f
+  U5452/A1 (AOI22X1)                                                0.07      0.00       0.13 f
+  U5452/Y (AOI22X1)                                                 0.10      0.08       0.22 r
+  u_PE0/best_dist_n[8] (net)                    1         0.01                0.00       0.22 r
+  u_PE0/min_dist_reg[8]/D (DFFSX1)                                  0.10      0.00       0.22 r
+  data arrival time                                                                      0.22
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/min_dist_reg[8]/CK (DFFSX1)                                           0.00       0.05 r
+  library hold time                                                          -0.02       0.03
+  data required time                                                                     0.03
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.03
+  data arrival time                                                                     -0.22
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE3/rand_z_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE3/cz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE3/rand_z_reg_reg[4]/CK (DFFRX4)                               0.00      0.00 #     0.00 r
+  u_PE3/rand_z_reg_reg[4]/QN (DFFRX4) <-                            0.07      0.15       0.15 r
+  n9863 (net)                                   2         0.04                0.00       0.15 r
+  U5049/A (INVX6)                                                   0.07      0.00       0.15 r
+  U5049/Y (INVX6)                                                   0.06      0.05       0.20 f
+  n10365 (net)                                  7         0.11                0.00       0.20 f
+  u_PE3/cz_reg_reg[0]/D (DFFRX1)                                    0.06      0.00       0.20 f
+  data arrival time                                                                      0.20
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE3/cz_reg_reg[0]/CK (DFFRX1)                                             0.00       0.05 r
+  library hold time                                                          -0.03       0.02
+  data required time                                                                     0.02
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.02
+  data arrival time                                                                     -0.20
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+  Startpoint: u_PE0/last_node_y_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_PE0/last_node_y_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: REG2REG
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                                       Fanout       Cap     Trans      Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  u_PE0/last_node_y_reg_reg[1]/CK (DFFRX2)                          0.00      0.00 #     0.00 r
+  u_PE0/last_node_y_reg_reg[1]/QN (DFFRX2) <-                       0.06      0.15       0.15 r
+  n10233 (net)                                  1         0.01                0.00       0.15 r
+  U7248/B0 (OAI222XL)                                               0.06      0.00       0.15 r
+  U7248/Y (OAI222XL)                                                0.08      0.07       0.22 f
+  n572 (net)                                    1         0.01                0.00       0.22 f
+  u_PE0/last_node_y_reg_reg[1]/D (DFFRX2)                           0.08      0.00       0.22 f
+  data arrival time                                                                      0.22
+
+  clock clk (rise edge)                                                       0.00       0.00
+  clock network delay (ideal)                                                 0.00       0.00
+  clock uncertainty                                                           0.05       0.05
+  u_PE0/last_node_y_reg_reg[1]/CK (DFFRX2)                                    0.00       0.05 r
+  library hold time                                                          -0.01       0.04
+  data required time                                                                     0.04
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                     0.04
+  data arrival time                                                                     -0.22
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.18
+
+
+1

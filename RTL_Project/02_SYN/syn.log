@@ -1,0 +1,1133 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version T-2022.03 for linux64 - Feb 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Initializing gui preferences from file  /RAID2/LAB/icssl/icsslRA27/.synopsys_dc_gui/preferences.tcl
+#======================================================================
+# RRT_TOP synthesis flow for CBDK_IC_Contest_v2.5 / TSMC 0.13 um
+# Run from any directory with: dc_shell -f 02_SYN/syn.tcl
+#======================================================================
+#---------------------------------------------------------------------
+# Local, relocatable paths
+#   RTL_Project/
+#     01_RTL/
+#     02_SYN/
+#   CBDK_IC_Contest_v2.5/
+#---------------------------------------------------------------------
+set SCRIPT_DIR [file dirname [file normalize [info script]]]
+/RAID2/LAB/icssl/icsslRA27/RTL_Project/02_SYN
+cd $SCRIPT_DIR
+set RTL_DIR    [file normalize [file join $SCRIPT_DIR .. 01_RTL]]
+/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL
+set PDK_ROOT   [file normalize [file join $SCRIPT_DIR .. .. CBDK_IC_Contest_v2.5]]
+/RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5
+set PDK_DB_DIR [file join $PDK_ROOT SynopsysDC db]
+/RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db
+foreach REQUIRED_FILE [list \
+        [file join $RTL_DIR rrt_top.sv] \
+        [file join $PDK_DB_DIR slow.db] \
+        [file join $PDK_DB_DIR fast.db]] {
+    if {![file readable $REQUIRED_FILE]} {
+        error "Required synthesis file is missing or unreadable: $REQUIRED_FILE"
+    }
+}
+file mkdir Report
+file mkdir Netlist
+file mkdir WORK
+set_app_var search_path [concat [list $RTL_DIR $PDK_DB_DIR] $search_path]
+/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL /RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db . /usr/cad/synopsys/synthesis/2022.03/libraries/syn /usr/cad/synopsys/synthesis/2022.03/dw/syn_ver /usr/cad/synopsys/synthesis/2022.03/dw/sim_ver
+set_app_var target_library [list slow.db]
+slow.db
+set_app_var link_library [list "*" slow.db fast.db dw_foundation.sldb]
+* slow.db fast.db dw_foundation.sldb
+set_app_var synthetic_library [list dw_foundation.sldb]
+dw_foundation.sldb
+define_design_lib WORK -path [file join $SCRIPT_DIR WORK]
+1
+# Settings carried over from the CBDK design example.
+set_app_var verilogout_no_tri true
+true
+set_app_var edifout_netlist_only true
+true
+#---------------------------------------------------------------------
+# Design and interface constraints
+#---------------------------------------------------------------------
+set DESIGN             RRT_TOP
+RRT_TOP
+set CLOCK_NAME         clk
+clk
+set CLOCK_PERIOD       3.3
+3.3
+set SETUP_UNCERTAINTY  0.10
+0.10
+set HOLD_UNCERTAINTY   0.05
+0.05
+set INPUT_DELAY        1.0
+1.0
+set OUTPUT_DELAY       1.0
+1.0
+set INPUT_DRIVE        1.0
+1.0
+set OUTPUT_PIN_LOAD    0.01
+0.01
+#---------------------------------------------------------------------
+# Read and elaborate the parameterized SystemVerilog design
+#---------------------------------------------------------------------
+analyze -library WORK -format sverilog [file join $RTL_DIR rrt_top.sv]
+Running PRESTO HDLC
+Compiling source file /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/rrt_top.sv
+Opening include file /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv
+Opening include file /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv
+Opening include file /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/TREECONT.sv
+Opening include file /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/MAPCONT.sv
+Opening include file /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/CCREADCONT.sv
+Presto compilation completed successfully.
+Loading db file '/RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db/fast.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.03/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'fast'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (RRT_TOP)
+Elaborated 1 design.
+Current design is now 'RRT_TOP'.
+Information: Building the design 'PE' instantiated from design 'RRT_TOP' with
+	the parameters "SEED=8'hff,STEP_DOWN=5'sh1f". (HDL-193)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:111: signed to unsigned part selection occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:126: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:128: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:130: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:133: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:134: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:151: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:152: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:153: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:154: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:156: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:428: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:434: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:440: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 123 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           125            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 148 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           150            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 277 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           279            |    auto/auto     |
+|           286            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 426 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           428            |    auto/auto     |
+|           434            |    auto/auto     |
+|           440            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 118 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 143 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ex_state_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 164 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   rand_y_reg_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   rand_z_reg_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   rand_x_reg_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 190 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     read_y_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    grid_size_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     read_z_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     read_x_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 203 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    min_dist_reg     | Flip-flop |  10   |  Y  | N  | N  | Y  | N  | N  | N  |
+|  nearest_x_reg_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  nearest_y_reg_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  nearest_z_reg_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   parent_reg_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    dist_reg_reg     | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 242 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  full_cell_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| empty_cell_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 255 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  grid_cnt_reg_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 267 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cz_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     gx_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     gy_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     gz_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    slot_reg_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cx_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cy_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 368 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   z_sign_reg_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     dx_reg_reg      | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     dy_reg_reg      | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     dz_reg_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   x_sign_reg_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   y_sign_reg_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 385 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  vector_z_reg_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_x_reg_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_y_reg_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 410 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   ex_cnt_reg_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| new_node_x_reg_reg  | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| new_node_y_reg_reg  | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| new_node_z_reg_reg  | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_node_x_reg_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_node_y_reg_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_node_z_reg_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 469 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| in_bound_n_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_ff_s1f line 478 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  obstacle_reg_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (PE_ff_s1f)
+Information: Building the design 'PE' instantiated from design 'RRT_TOP' with
+	the parameters "SEED=8'h00,STEP_DOWN=5'sh01". (HDL-193)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:111: signed to unsigned part selection occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:126: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:128: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:130: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:133: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:134: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:151: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:152: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:153: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:154: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:156: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:428: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:434: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv:440: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 123 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           125            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 148 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           150            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 277 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           279            |    auto/auto     |
+|           286            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 426 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           428            |    auto/auto     |
+|           434            |    auto/auto     |
+|           440            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 118 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 143 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ex_state_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 164 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   rand_y_reg_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   rand_z_reg_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   rand_x_reg_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 190 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     read_y_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    grid_size_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     read_z_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     read_x_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 203 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    min_dist_reg     | Flip-flop |  10   |  Y  | N  | N  | Y  | N  | N  | N  |
+|  nearest_x_reg_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  nearest_y_reg_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  nearest_z_reg_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   parent_reg_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    dist_reg_reg     | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 242 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  full_cell_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| empty_cell_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 255 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  grid_cnt_reg_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 267 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cz_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     gx_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     gy_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     gz_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    slot_reg_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cx_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cy_reg_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 368 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   z_sign_reg_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     dx_reg_reg      | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     dy_reg_reg      | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     dz_reg_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   x_sign_reg_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   y_sign_reg_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 385 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  vector_z_reg_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_x_reg_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_y_reg_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 410 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   ex_cnt_reg_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| new_node_x_reg_reg  | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| new_node_y_reg_reg  | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| new_node_z_reg_reg  | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_node_x_reg_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_node_y_reg_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_node_z_reg_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 469 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| in_bound_n_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine PE_00_s01 line 478 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/PE.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  obstacle_reg_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (PE_00_s01)
+Information: Building the design 'TREECONT'. (HDL-193)
+
+Inferred memory devices in process
+	in routine TREECONT line 72 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/TREECONT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   grant_valid_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     pe_sel_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    grant_pe_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (TREECONT)
+Information: Building the design 'MAPCONT'. (HDL-193)
+
+Statistics for case statements in always block at line 56 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/MAPCONT.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            64            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine MAPCONT line 100 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/MAPCONT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   grant_valid_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       sel_reg       | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    grant_pe_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (MAPCONT)
+Information: Building the design 'CC'. (HDL-193)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv:123: signed to unsigned part selection occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv:183: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv:186: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv:201: signed to unsigned assignment occurs. (VER-318)
+Warning:  /RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv:204: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 130 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           131            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 143 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           149            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 180 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           182            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 250 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           259            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 297 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           302            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 324 in file
+	'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           331            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine CC line 143 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rd_size_q_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    rd_node_q_reg    | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   rd_parent_q_reg   | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CC line 210 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CC line 218 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     arb_ptr_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CC line 228 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       sel_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     cur_pe_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CC line 239 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cand_parent_reg   | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cand_node_reg    | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CC line 250 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    scan_size_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cand_slot_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       sgx_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       sgy_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       sgz_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      sslot_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CC line 297 in file
+		'/RAID2/LAB/icssl/icsslRA27/RTL_Project/01_RTL/connection_check.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cur_g_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      cur_s_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|      CC/122      |   4    |    1    |      2       |
+|      CC/122      |   4    |    1    |      2       |
+|      CC/122      |   4    |    1    |      2       |
+|      CC/122      |   4    |    1    |      2       |
+======================================================
+Presto compilation completed successfully. (CC)
+Information: Building the design 'CCREADCONT'. (HDL-193)
+Presto compilation completed successfully. (CCREADCONT)
+1
+current_design $DESIGN
+Current design is 'RRT_TOP'.
+{RRT_TOP}
+link
+
+  Linking design 'RRT_TOP'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (7 designs)               /RAID2/LAB/icssl/icsslRA27/RTL_Project/02_SYN/RRT_TOP.db, etc
+  slow (library)              /RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
+  fast (library)              /RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db/fast.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/2022.03/libraries/syn/dw_foundation.sldb
+
+1
+# The slow library is used for setup/mapping and fast for minimum-delay
+# analysis.  The explicit WLM avoids the previous zero-wire-load estimate.
+set_min_library slow.db -min_version fast.db
+1
+set_operating_conditions -min_library fast -min fast \
+                         -max_library slow -max slow
+Using operating conditions 'slow' found in library 'slow'.
+Using operating conditions 'fast' found in library 'fast'.
+1
+set_wire_load_model -name tsmc13_wl10 -library slow
+1
+set_wire_load_mode top
+1
+create_clock -name $CLOCK_NAME -period $CLOCK_PERIOD \
+             -waveform [list 0 [expr {$CLOCK_PERIOD / 2.0}]] [get_ports clk]
+1
+set_dont_touch_network [get_clocks $CLOCK_NAME]
+1
+set_fix_hold           [get_clocks $CLOCK_NAME]
+1
+set_clock_uncertainty -setup $SETUP_UNCERTAINTY [get_clocks $CLOCK_NAME]
+1
+set_clock_uncertainty -hold  $HOLD_UNCERTAINTY  [get_clocks $CLOCK_NAME]
+1
+set_ideal_network [get_ports clk]
+1
+set DATA_INPUTS [remove_from_collection [all_inputs] [get_ports {clk rst_n}]]
+{in_valid0 rand_num0[23] rand_num0[22] rand_num0[21] rand_num0[20] rand_num0[19] rand_num0[18] rand_num0[17] rand_num0[16] rand_num0[15] rand_num0[14] rand_num0[13] rand_num0[12] rand_num0[11] rand_num0[10] rand_num0[9] rand_num0[8] rand_num0[7] rand_num0[6] rand_num0[5] rand_num0[4] rand_num0[3] rand_num0[2] rand_num0[1] rand_num0[0] in_valid1 rand_num1[23] rand_num1[22] rand_num1[21] rand_num1[20] rand_num1[19] rand_num1[18] rand_num1[17] rand_num1[16] rand_num1[15] rand_num1[14] rand_num1[13] rand_num1[12] rand_num1[11] rand_num1[10] rand_num1[9] rand_num1[8] rand_num1[7] rand_num1[6] rand_num1[5] rand_num1[4] rand_num1[3] rand_num1[2] rand_num1[1] rand_num1[0] in_valid2 rand_num2[23] rand_num2[22] rand_num2[21] rand_num2[20] rand_num2[19] rand_num2[18] rand_num2[17] rand_num2[16] rand_num2[15] rand_num2[14] rand_num2[13] rand_num2[12] rand_num2[11] rand_num2[10] rand_num2[9] rand_num2[8] rand_num2[7] rand_num2[6] rand_num2[5] rand_num2[4] rand_num2[3] rand_num2[2] rand_num2[1] rand_num2[0] in_valid3 rand_num3[23] rand_num3[22] rand_num3[21] rand_num3[20] rand_num3[19] rand_num3[18] rand_num3[17] rand_num3[16] rand_num3[15] rand_num3[14] rand_num3[13] rand_num3[12] rand_num3[11] rand_num3[10] rand_num3[9] rand_num3[8] rand_num3[7] rand_num3[6] rand_num3[5] rand_num3[4] rand_num3[3] rand_num3[2] rand_num3[1] rand_num3[0] ...}
+if {[sizeof_collection $DATA_INPUTS] > 0} {
+    set_input_delay -max $INPUT_DELAY -clock $CLOCK_NAME $DATA_INPUTS
+    set_input_delay -min 0.0          -clock $CLOCK_NAME $DATA_INPUTS
+    set_drive $INPUT_DRIVE $DATA_INPUTS
+}
+1
+set_output_delay -max $OUTPUT_DELAY -clock $CLOCK_NAME [all_outputs]
+1
+set_output_delay -min 0.0           -clock $CLOCK_NAME [all_outputs]
+1
+set_load -pin_load $OUTPUT_PIN_LOAD [all_outputs]
+1
+# Use pin collections for timing endpoints.  Register-output pins are replaced
+# during technology mapping, so clock objects are the stable startpoints for
+# sequential path groups.
+set REG_Q_PINS [all_registers -output_pins]
+{u_CC/cur_s_reg[0]/Q u_CC/cur_s_reg[0]/QN u_CC/cur_s_reg[1]/Q u_CC/cur_s_reg[1]/QN u_CC/cur_s_reg[2]/Q u_CC/cur_s_reg[2]/QN u_CC/cur_s_reg[3]/Q u_CC/cur_s_reg[3]/QN u_CC/cur_s_reg[4]/Q u_CC/cur_s_reg[4]/QN u_CC/cur_s_reg[5]/Q u_CC/cur_s_reg[5]/QN u_CC/cur_s_reg[6]/Q u_CC/cur_s_reg[6]/QN u_CC/cur_s_reg[7]/Q u_CC/cur_s_reg[7]/QN u_CC/cur_s_reg[8]/Q u_CC/cur_s_reg[8]/QN u_CC/cur_s_reg[9]/Q u_CC/cur_s_reg[9]/QN u_CC/cur_s_reg[10]/Q u_CC/cur_s_reg[10]/QN u_CC/cur_s_reg[11]/Q u_CC/cur_s_reg[11]/QN u_CC/cur_s_reg[12]/Q u_CC/cur_s_reg[12]/QN u_CC/cur_s_reg[13]/Q u_CC/cur_s_reg[13]/QN u_CC/cur_s_reg[14]/Q u_CC/cur_s_reg[14]/QN u_CC/cur_s_reg[15]/Q u_CC/cur_s_reg[15]/QN u_CC/cur_g_reg[0]/Q u_CC/cur_g_reg[0]/QN u_CC/cur_g_reg[1]/Q u_CC/cur_g_reg[1]/QN u_CC/cur_g_reg[2]/Q u_CC/cur_g_reg[2]/QN u_CC/cur_g_reg[3]/Q u_CC/cur_g_reg[3]/QN u_CC/cur_g_reg[4]/Q u_CC/cur_g_reg[4]/QN u_CC/cur_g_reg[5]/Q u_CC/cur_g_reg[5]/QN u_CC/cur_g_reg[6]/Q u_CC/cur_g_reg[6]/QN u_CC/cur_g_reg[7]/Q u_CC/cur_g_reg[7]/QN u_CC/cur_g_reg[8]/Q u_CC/cur_g_reg[8]/QN u_CC/cur_g_reg[9]/Q u_CC/cur_g_reg[9]/QN u_CC/cur_g_reg[10]/Q u_CC/cur_g_reg[10]/QN u_CC/cur_g_reg[11]/Q u_CC/cur_g_reg[11]/QN u_CC/cur_g_reg[12]/Q u_CC/cur_g_reg[12]/QN u_CC/cur_g_reg[13]/Q u_CC/cur_g_reg[13]/QN u_CC/cur_g_reg[14]/Q u_CC/cur_g_reg[14]/QN u_CC/cur_g_reg[15]/Q u_CC/cur_g_reg[15]/QN u_CC/sslot_reg[0]/Q u_CC/sslot_reg[0]/QN u_CC/sslot_reg[1]/Q u_CC/sslot_reg[1]/QN u_CC/sslot_reg[2]/Q u_CC/sslot_reg[2]/QN u_CC/sslot_reg[3]/Q u_CC/sslot_reg[3]/QN u_CC/sgz_reg[0]/Q u_CC/sgz_reg[0]/QN u_CC/sgz_reg[1]/Q u_CC/sgz_reg[1]/QN u_CC/sgz_reg[2]/Q u_CC/sgz_reg[2]/QN u_CC/sgz_reg[3]/Q u_CC/sgz_reg[3]/QN u_CC/sgy_reg[0]/Q u_CC/sgy_reg[0]/QN u_CC/sgy_reg[1]/Q u_CC/sgy_reg[1]/QN u_CC/sgy_reg[2]/Q u_CC/sgy_reg[2]/QN u_CC/sgy_reg[3]/Q u_CC/sgy_reg[3]/QN u_CC/sgx_reg[0]/Q u_CC/sgx_reg[0]/QN u_CC/sgx_reg[1]/Q u_CC/sgx_reg[1]/QN u_CC/sgx_reg[2]/Q u_CC/sgx_reg[2]/QN u_CC/sgx_reg[3]/Q u_CC/sgx_reg[3]/QN u_CC/cand_slot_reg[0]/Q u_CC/cand_slot_reg[0]/QN u_CC/cand_slot_reg[1]/Q u_CC/cand_slot_reg[1]/QN ...}
+set REG_D_PINS [all_registers -data_pins]
+{u_CC/cur_s_reg[0]/next_state u_CC/cur_s_reg[1]/next_state u_CC/cur_s_reg[2]/next_state u_CC/cur_s_reg[3]/next_state u_CC/cur_s_reg[4]/next_state u_CC/cur_s_reg[5]/next_state u_CC/cur_s_reg[6]/next_state u_CC/cur_s_reg[7]/next_state u_CC/cur_s_reg[8]/next_state u_CC/cur_s_reg[9]/next_state u_CC/cur_s_reg[10]/next_state u_CC/cur_s_reg[11]/next_state u_CC/cur_s_reg[12]/next_state u_CC/cur_s_reg[13]/next_state u_CC/cur_s_reg[14]/next_state u_CC/cur_s_reg[15]/next_state u_CC/cur_g_reg[0]/next_state u_CC/cur_g_reg[1]/next_state u_CC/cur_g_reg[2]/next_state u_CC/cur_g_reg[3]/next_state u_CC/cur_g_reg[4]/next_state u_CC/cur_g_reg[5]/next_state u_CC/cur_g_reg[6]/next_state u_CC/cur_g_reg[7]/next_state u_CC/cur_g_reg[8]/next_state u_CC/cur_g_reg[9]/next_state u_CC/cur_g_reg[10]/next_state u_CC/cur_g_reg[11]/next_state u_CC/cur_g_reg[12]/next_state u_CC/cur_g_reg[13]/next_state u_CC/cur_g_reg[14]/next_state u_CC/cur_g_reg[15]/next_state u_CC/sslot_reg[0]/next_state u_CC/sslot_reg[1]/next_state u_CC/sslot_reg[2]/next_state u_CC/sslot_reg[3]/next_state u_CC/sgz_reg[0]/next_state u_CC/sgz_reg[1]/next_state u_CC/sgz_reg[2]/next_state u_CC/sgz_reg[3]/next_state u_CC/sgy_reg[0]/next_state u_CC/sgy_reg[1]/next_state u_CC/sgy_reg[2]/next_state u_CC/sgy_reg[3]/next_state u_CC/sgx_reg[0]/next_state u_CC/sgx_reg[1]/next_state u_CC/sgx_reg[2]/next_state u_CC/sgx_reg[3]/next_state u_CC/cand_slot_reg[0]/next_state u_CC/cand_slot_reg[1]/next_state u_CC/cand_slot_reg[2]/next_state u_CC/cand_slot_reg[3]/next_state u_CC/scan_size_reg[0]/next_state u_CC/scan_size_reg[1]/next_state u_CC/scan_size_reg[2]/next_state u_CC/scan_size_reg[3]/next_state u_CC/cand_node_reg[0]/next_state u_CC/cand_node_reg[1]/next_state u_CC/cand_node_reg[2]/next_state u_CC/cand_node_reg[3]/next_state u_CC/cand_node_reg[4]/next_state u_CC/cand_node_reg[5]/next_state u_CC/cand_node_reg[6]/next_state u_CC/cand_node_reg[7]/next_state u_CC/cand_node_reg[8]/next_state u_CC/cand_node_reg[9]/next_state u_CC/cand_node_reg[10]/next_state u_CC/cand_node_reg[11]/next_state u_CC/cand_node_reg[12]/next_state u_CC/cand_node_reg[13]/next_state u_CC/cand_node_reg[14]/next_state u_CC/cand_node_reg[15]/next_state u_CC/cand_node_reg[16]/next_state u_CC/cand_node_reg[17]/next_state u_CC/cand_node_reg[18]/next_state u_CC/cand_node_reg[19]/next_state u_CC/cand_node_reg[20]/next_state u_CC/cand_node_reg[21]/next_state u_CC/cand_node_reg[22]/next_state u_CC/cand_node_reg[23]/next_state u_CC/cand_parent_reg[0]/next_state u_CC/cand_parent_reg[1]/next_state u_CC/cand_parent_reg[2]/next_state u_CC/cand_parent_reg[3]/next_state u_CC/cand_parent_reg[4]/next_state u_CC/cand_parent_reg[5]/next_state u_CC/cand_parent_reg[6]/next_state u_CC/cand_parent_reg[7]/next_state u_CC/cand_parent_reg[8]/next_state u_CC/cand_parent_reg[9]/next_state u_CC/cand_parent_reg[10]/next_state u_CC/cand_parent_reg[11]/next_state u_CC/cand_parent_reg[12]/next_state u_CC/cand_parent_reg[13]/next_state u_CC/cand_parent_reg[14]/next_state u_CC/cand_parent_reg[15]/next_state u_CC/cur_pe_reg[0]/next_state u_CC/cur_pe_reg[1]/next_state u_CC/sel_reg/next_state u_CC/arb_ptr_reg[0]/next_state ...}
+group_path -name REG2REG -from [get_clocks $CLOCK_NAME] -to $REG_D_PINS \
+           -weight 3.0 -critical_range 0.5
+1
+group_path -name IN2REG -from $DATA_INPUTS -to $REG_D_PINS \
+           -weight 2.0 -critical_range 0.5
+1
+group_path -name REG2OUT -from [get_clocks $CLOCK_NAME] -to [all_outputs] \
+           -weight 2.0 -critical_range 0.5
+1
+#---------------------------------------------------------------------
+# Optimization
+#---------------------------------------------------------------------
+uniquify
+Information: Uniquified 2 instances of design 'PE_ff_s1f'. (OPT-1056)
+Information: Uniquified 2 instances of design 'PE_00_s01'. (OPT-1056)
+Information: Uniquified 2 instances of design 'TREECONT'. (OPT-1056)
+1
+set_fix_multiple_port_nets -all -buffer_constants
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        | S-2021.06-DWBB_202106.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Comand line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 5020                                   |
+| Number of User Hierarchies                              | 9                                      |
+| Sequential Cell Count                                   | 1172                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 5                                      |
+| Number of VT class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch cells                              | 1621                                   |
+| Number of Dont Touch nets                               | 9                                      |
+| Number of size only cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 725 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'RRT_TOP'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy u_PE0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_PE2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_TC_S before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_MC before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_CC before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_CCR before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_PE1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_PE3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_TC_G before Pass 1 (OPT-776)
+Information: Ungrouping 9 of 10 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'RRT_TOP'
+Information: Added key list 'DesignWare' to design 'RRT_TOP'. (DDB-72)
+ Implement Synthetic for 'RRT_TOP'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: In design 'RRT_TOP', the register 'u_PE3/dx_reg_reg[9]' is removed because it is merged to 'u_PE3/dx_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE3/dy_reg_reg[9]' is removed because it is merged to 'u_PE3/dy_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE2/dx_reg_reg[9]' is removed because it is merged to 'u_PE2/dx_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE2/dy_reg_reg[9]' is removed because it is merged to 'u_PE2/dy_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE0/dx_reg_reg[9]' is removed because it is merged to 'u_PE0/dx_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE0/dy_reg_reg[9]' is removed because it is merged to 'u_PE0/dy_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE1/dx_reg_reg[9]' is removed because it is merged to 'u_PE1/dx_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE1/dy_reg_reg[9]' is removed because it is merged to 'u_PE1/dy_reg_reg[10]'. (OPT-1215)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:36  236308.6      0.28      16.8     208.4                           200002368.0000      0.00  
+    0:00:37  223264.1      1.30     287.3     738.6                           188971824.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+Information: In design 'RRT_TOP', the register 'u_PE3/dz_reg_reg[8]' is removed because it is merged to 'u_PE3/dz_reg_reg[9]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE3/dx_reg_reg[10]' is removed because it is merged to 'u_PE3/dx_reg_reg[8]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE3/dy_reg_reg[8]' is removed because it is merged to 'u_PE3/dy_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE2/dx_reg_reg[8]' is removed because it is merged to 'u_PE2/dx_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE2/dz_reg_reg[9]' is removed because it is merged to 'u_PE2/dz_reg_reg[8]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE1/dz_reg_reg[8]' is removed because it is merged to 'u_PE1/dz_reg_reg[9]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE1/dy_reg_reg[10]' is removed because it is merged to 'u_PE1/dy_reg_reg[8]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE0/dx_reg_reg[10]' is removed because it is merged to 'u_PE0/dx_reg_reg[8]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE0/dy_reg_reg[8]' is removed because it is merged to 'u_PE0/dy_reg_reg[10]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE0/dz_reg_reg[8]' is removed because it is merged to 'u_PE0/dz_reg_reg[9]'. (OPT-1215)
+    0:00:37  222941.6      1.30     252.4     594.1                           188824160.0000      0.00  
+    0:00:37  222887.3      1.30     252.4     594.1                           188785968.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:41  122302.8      0.54     304.1      82.4                           97005672.0000      0.00  
+    0:00:46  127451.0      0.00       0.0     171.7                           100645944.0000      0.00  
+    0:00:46  127451.0      0.00       0.0     171.7                           100645944.0000      0.00  
+    0:00:46  127445.9      0.01       0.3     171.7                           100645352.0000      0.00  
+Information: The register 'u_PE3/dy_reg_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_PE3/dx_reg_reg[8]' is a constant and will be removed. (OPT-1206)
+    0:00:47  126121.9      0.26      18.7     135.3                           99978568.0000      0.00  
+    0:00:47  125942.0      0.33      28.5     145.7                           99891768.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+Information: In design 'RRT_TOP', the register 'u_PE2/dy_reg_reg[10]' is removed because it is merged to 'u_PE2/dy_reg_reg[8]'. (OPT-1215)
+Information: In design 'RRT_TOP', the register 'u_PE1/dx_reg_reg[10]' is removed because it is merged to 'u_PE1/dx_reg_reg[8]'. (OPT-1215)
+    0:00:49  123446.8      0.30      11.6     133.8                           97570192.0000      0.00  
+    0:00:50  123343.3      0.07       1.4     133.8                           97454712.0000      0.00  
+    0:00:50  123343.3      0.07       1.4     133.8                           97454712.0000      0.00  
+    0:00:50  120060.5      0.06       2.2     131.5                           93485088.0000      0.00  
+    0:00:50  120060.5      0.06       2.2     131.5                           93485088.0000      0.00  
+    0:00:53  122789.9      0.00       0.0     157.1                           96097976.0000      0.00  
+    0:00:54  122789.9      0.00       0.0     157.1                           96097976.0000      0.00  
+    0:00:54  122789.9      0.00       0.0     157.1                           96097976.0000      0.00  
+    0:00:54  122789.9      0.00       0.0     157.1                           96097976.0000      0.00  
+    0:00:54  122789.9      0.00       0.0     157.1                           96097976.0000      0.00  
+    0:00:54  122789.9      0.00       0.0     157.1                           96097976.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:55  122776.3      0.00       0.0     157.1                           96084536.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:00:55  122749.2      0.00       0.0       0.0                           96016504.0000      0.00  
+    0:00:55  122749.2      0.00       0.0       0.0                           96016504.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:55  122749.2      0.00       0.0       0.0                           96016504.0000      0.00  
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+    0:00:58  118108.5      0.11      46.2       0.0 u_PE2/dz_reg_reg[3]/D     91281080.0000      0.00  
+    0:00:58  118128.9      0.10      44.6       0.0                           91311384.0000      0.00  
+    0:01:03  124222.5      0.06      14.6      34.6                           97556480.0000      0.00  
+    0:01:03  124222.5      0.06      14.6      34.6                           97556480.0000      0.00  
+    0:01:04  119766.8      0.05       9.7       8.1                           92841528.0000      0.00  
+    0:01:04  119766.8      0.05       9.7       8.1                           92841528.0000      0.00  
+    0:01:10  125779.0      0.01       0.1      48.4                           99229152.0000      0.00  
+    0:01:10  125779.0      0.01       0.1      48.4                           99229152.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+    0:01:10  125882.6      0.00       0.0      48.4                           99339880.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:10  126344.3      0.00       0.0      48.4                           99971984.0000      0.00  
+    0:01:11  120839.6      0.00       0.0      31.2                           94353072.0000      0.00  
+    0:01:11  120832.8      0.00       0.0      31.2                           94349696.0000      0.00  
+    0:01:11  120832.8      0.00       0.0      31.2                           94349696.0000      0.00  
+    0:01:12  118962.3      0.00       0.0       0.0                           92291768.0000      0.00  
+    0:01:13  117750.3      0.00       0.0       0.0                           91275368.0000      0.00  
+    0:01:13  117750.3      0.00       0.0       0.0                           91275368.0000      0.00  
+    0:01:13  117750.3      0.00       0.0       0.0                           91275368.0000      0.00  
+    0:01:13  117750.3      0.00       0.0       0.0                           91275368.0000      0.00  
+    0:01:13  117750.3      0.00       0.0       0.0                           91275368.0000      0.00  
+    0:01:13  117750.3      0.00       0.0       0.0                           91275368.0000      0.00  
+    0:01:14  114100.9      0.00       0.0       0.0                           88660912.0000      0.00  
+Loading db file '/RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/RAID2/LAB/icssl/icsslRA27/CBDK_IC_Contest_v2.5/SynopsysDC/db/fast.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'RRT_TOP' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 1150 load(s), 1 driver(s)
+     Net 'rst_n': 1150 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#---------------------------------------------------------------------
+# Reports before name conversion retain recognizable RTL hierarchy names.
+#---------------------------------------------------------------------
+# Refresh the collections after mapping/ungrouping; the pre-compile generic
+# register pins may have been replaced by technology-cell pins.
+set REG_Q_PINS [all_registers -output_pins]
+{u_PE1/parent_reg_reg[0]/Q u_PE1/parent_reg_reg[0]/QN u_PE1/parent_reg_reg[2]/Q u_PE1/parent_reg_reg[2]/QN u_PE1/parent_reg_reg[6]/Q u_PE1/parent_reg_reg[6]/QN u_PE1/parent_reg_reg[12]/Q u_PE1/parent_reg_reg[12]/QN u_PE1/parent_reg_reg[3]/Q u_PE1/parent_reg_reg[3]/QN u_PE1/parent_reg_reg[8]/Q u_PE1/parent_reg_reg[8]/QN u_PE1/parent_reg_reg[4]/Q u_PE1/parent_reg_reg[4]/QN u_PE0/new_node_z_reg_reg[6]/Q u_PE0/new_node_z_reg_reg[6]/QN u_PE0/new_node_x_reg_reg[5]/Q u_PE0/new_node_x_reg_reg[5]/QN u_CC/cur_g_reg[3]/Q u_CC/cur_g_reg[3]/QN u_CC/cur_g_reg[4]/Q u_CC/cur_g_reg[4]/QN u_CC/cur_g_reg[7]/Q u_CC/cur_g_reg[7]/QN u_CC/cur_g_reg[1]/Q u_CC/cur_g_reg[1]/QN u_PE1/nearest_y_reg_reg[7]/Q u_PE1/nearest_y_reg_reg[7]/QN u_PE3/dx_reg_reg[7]/Q u_PE3/dx_reg_reg[7]/QN u_PE1/nearest_y_reg_reg[6]/Q u_PE1/nearest_y_reg_reg[6]/QN u_PE1/nearest_x_reg_reg[7]/Q u_PE1/nearest_x_reg_reg[7]/QN u_PE0/gx_reg_reg[2]/Q u_PE0/gx_reg_reg[2]/QN u_PE1/nearest_z_reg_reg[6]/Q u_PE1/nearest_z_reg_reg[6]/QN u_PE1/nearest_x_reg_reg[6]/Q u_PE1/nearest_x_reg_reg[6]/QN u_PE0/nearest_x_reg_reg[6]/Q u_PE0/nearest_x_reg_reg[6]/QN u_PE0/gy_reg_reg[1]/Q u_PE0/gy_reg_reg[1]/QN u_TC_S/grant_pe_reg/Q u_TC_S/grant_pe_reg/QN u_PE3/dy_reg_reg[3]/Q u_PE3/dy_reg_reg[3]/QN u_PE2/dy_reg_reg[6]/Q u_PE2/dy_reg_reg[6]/QN u_PE1/nearest_y_reg_reg[4]/Q u_PE1/nearest_y_reg_reg[4]/QN u_PE3/dy_reg_reg[4]/Q u_PE3/dy_reg_reg[4]/QN u_PE3/nearest_z_reg_reg[5]/Q u_PE3/nearest_z_reg_reg[5]/QN u_PE2/nearest_x_reg_reg[3]/Q u_PE2/nearest_x_reg_reg[3]/QN u_CC/sgx_reg[3]/Q u_CC/sgx_reg[3]/QN u_PE1/nearest_x_reg_reg[5]/Q u_PE1/nearest_x_reg_reg[5]/QN u_PE3/nearest_x_reg_reg[5]/Q u_PE3/nearest_x_reg_reg[5]/QN u_PE1/nearest_x_reg_reg[1]/Q u_PE1/nearest_x_reg_reg[1]/QN u_PE2/dy_reg_reg[3]/Q u_PE2/dy_reg_reg[3]/QN u_PE1/dy_reg_reg[3]/Q u_PE1/dy_reg_reg[3]/QN u_PE2/dy_reg_reg[4]/Q u_PE2/dy_reg_reg[4]/QN u_PE3/dx_reg_reg[2]/Q u_PE3/dx_reg_reg[2]/QN u_PE2/dz_reg_reg[2]/Q u_PE2/dz_reg_reg[2]/QN u_PE2/dz_reg_reg[3]/Q u_PE2/dz_reg_reg[3]/QN u_PE1/last_node_y_reg_reg[1]/Q u_PE1/last_node_y_reg_reg[1]/QN u_PE0/dz_reg_reg[6]/Q u_PE0/dz_reg_reg[6]/QN u_PE1/nearest_y_reg_reg[3]/Q u_PE1/nearest_y_reg_reg[3]/QN u_PE2/dy_reg_reg[5]/Q u_PE2/dy_reg_reg[5]/QN u_PE1/dx_reg_reg[2]/Q u_PE1/dx_reg_reg[2]/QN u_PE1/dx_reg_reg[3]/Q u_PE1/dx_reg_reg[3]/QN u_PE2/dy_reg_reg[2]/Q u_PE2/dy_reg_reg[2]/QN u_PE2/dz_reg_reg[1]/Q u_PE2/dz_reg_reg[1]/QN u_PE0/dz_reg_reg[4]/Q u_PE0/dz_reg_reg[4]/QN u_PE0/dx_reg_reg[5]/Q u_PE0/dx_reg_reg[5]/QN u_PE1/nearest_z_reg_reg[1]/Q u_PE1/nearest_z_reg_reg[1]/QN ...}
+set REG_D_PINS [all_registers -data_pins]
+{u_PE1/parent_reg_reg[0]/D u_PE1/parent_reg_reg[2]/D u_PE1/parent_reg_reg[6]/D u_PE1/parent_reg_reg[12]/D u_PE1/parent_reg_reg[3]/D u_PE1/parent_reg_reg[8]/D u_PE1/parent_reg_reg[4]/D u_PE0/new_node_z_reg_reg[6]/D u_PE0/new_node_x_reg_reg[5]/D u_CC/cur_g_reg[3]/D u_CC/cur_g_reg[4]/D u_CC/cur_g_reg[7]/D u_CC/cur_g_reg[1]/D u_PE1/nearest_y_reg_reg[7]/D u_PE3/dx_reg_reg[7]/D u_PE1/nearest_y_reg_reg[6]/D u_PE1/nearest_x_reg_reg[7]/D u_PE0/gx_reg_reg[2]/D u_PE1/nearest_z_reg_reg[6]/D u_PE1/nearest_x_reg_reg[6]/D u_PE0/nearest_x_reg_reg[6]/D u_PE0/gy_reg_reg[1]/D u_TC_S/grant_pe_reg/D u_PE3/dy_reg_reg[3]/D u_PE2/dy_reg_reg[6]/D u_PE1/nearest_y_reg_reg[4]/D u_PE3/dy_reg_reg[4]/D u_PE3/nearest_z_reg_reg[5]/D u_PE2/nearest_x_reg_reg[3]/D u_CC/sgx_reg[3]/D u_PE1/nearest_x_reg_reg[5]/D u_PE3/nearest_x_reg_reg[5]/D u_PE1/nearest_x_reg_reg[1]/D u_PE2/dy_reg_reg[3]/D u_PE1/dy_reg_reg[3]/D u_PE2/dy_reg_reg[4]/D u_PE3/dx_reg_reg[2]/D u_PE2/dz_reg_reg[2]/D u_PE2/dz_reg_reg[3]/D u_PE1/last_node_y_reg_reg[1]/D u_PE0/dz_reg_reg[6]/D u_PE1/nearest_y_reg_reg[3]/D u_PE2/dy_reg_reg[5]/D u_PE1/dx_reg_reg[2]/D u_PE1/dx_reg_reg[3]/D u_PE2/dy_reg_reg[2]/D u_PE2/dz_reg_reg[1]/D u_PE0/dz_reg_reg[4]/D u_PE0/dx_reg_reg[5]/D u_PE1/nearest_z_reg_reg[1]/D u_PE2/vector_y_reg_reg[1]/D u_PE0/dz_reg_reg[3]/D u_PE0/dz_reg_reg[2]/D u_CC/rd_parent_q_reg[1]/D u_PE1/vector_x_reg_reg[1]/D u_PE0/ex_state_reg[0]/D u_PE1/dist_reg_reg[3]/D u_CC/sel_reg/D u_PE1/min_dist_reg[4]/D u_PE2/read_z_reg[0]/D u_CC/rd_node_q_reg[16]/D u_CC/cand_node_reg[4]/D u_PE1/read_y_reg[4]/D u_PE1/read_y_reg[5]/D u_PE0/read_y_reg[6]/D u_PE0/read_y_reg[7]/D u_PE2/read_y_reg[7]/D u_CC/rd_node_q_reg[21]/D u_PE2/rand_y_reg_reg[4]/D u_CC/cur_g_reg[2]/D u_PE1/nearest_y_reg_reg[2]/D u_PE1/nearest_z_reg_reg[2]/D u_PE3/nearest_x_reg_reg[1]/D u_PE3/nearest_z_reg_reg[4]/D u_PE3/full_cell_reg_reg/D u_PE1/parent_reg_reg[14]/D u_PE2/dz_reg_reg[7]/D u_PE1/dx_reg_reg[4]/D u_PE2/new_node_y_reg_reg[7]/D u_PE0/new_node_x_reg_reg[6]/D u_PE2/gx_reg_reg[2]/D u_PE0/gz_reg_reg[0]/D u_PE1/last_node_x_reg_reg[1]/D u_PE0/dz_reg_reg[5]/D u_PE3/cx_reg_reg[0]/D u_PE1/dy_reg_reg[1]/D u_PE2/read_x_reg[7]/D u_MC/grant_pe_reg[0]/D u_PE0/rand_y_reg_reg[3]/D u_PE0/gy_reg_reg[0]/D u_CC/sgx_reg[0]/D u_PE2/grid_cnt_reg_reg[1]/D u_PE1/gy_reg_reg[0]/D u_PE3/dx_reg_reg[3]/D u_PE0/last_node_y_reg_reg[1]/D u_PE0/rand_x_reg_reg[2]/D u_PE1/last_node_z_reg_reg[4]/D u_PE2/gx_reg_reg[3]/D u_CC/state_reg[2]/D u_PE1/read_x_reg[3]/D ...}
+check_design > Report/$DESIGN.check_design
+check_timing > Report/$DESIGN.check_timing
+report_constraint -all_violators > Report/$DESIGN.constraints
+report_qor > Report/$DESIGN.qor
+report_clock > Report/$DESIGN.clock
+report_area > Report/$DESIGN.area
+report_resource > Report/$DESIGN.resource
+report_timing -delay_type max -max_paths 50 -nworst 5 \
+              -input_pins -nets -transition_time -capacitance \
+              > Report/$DESIGN.timing
+report_timing -delay_type max -from $REG_Q_PINS -to $REG_D_PINS \
+              -max_paths 50 -nworst 5 -input_pins -nets \
+              -transition_time -capacitance \
+              > Report/$DESIGN.timing_reg2reg
+report_timing -delay_type max -from $DATA_INPUTS -to $REG_D_PINS \
+              -max_paths 50 -nworst 5 -input_pins -nets \
+              -transition_time -capacitance \
+              > Report/$DESIGN.timing_in2reg
+report_timing -delay_type max -from $REG_Q_PINS -to [all_outputs] \
+              -max_paths 50 -nworst 5 -input_pins -nets \
+              -transition_time -capacitance \
+              > Report/$DESIGN.timing_reg2out
+report_timing -delay_type min -from $REG_Q_PINS -to $REG_D_PINS \
+              -max_paths 50 -nworst 5 -input_pins -nets \
+              -transition_time -capacitance \
+              > Report/$DESIGN.timing_hold
+#---------------------------------------------------------------------
+# Verilog-safe names and APR handoff files
+#---------------------------------------------------------------------
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+set verilogout_higher_designs_first true
+true
+write -hierarchy -format ddc     -output Netlist/$DESIGN.ddc
+Writing ddc file 'Netlist/RRT_TOP.ddc'.
+1
+write -hierarchy -format verilog -output Netlist/$DESIGN\_SYN.v
+Writing verilog file '/RAID2/LAB/icssl/icsslRA27/RTL_Project/02_SYN/Netlist/RRT_TOP_SYN.v'.
+1
+write_sdf -version 3.0 -context verilog -load_delay cell \
+          -significant_digits 6 Netlist/$DESIGN\_SYN.sdf
+Information: Writing timing information to file '/RAID2/LAB/icssl/icsslRA27/RTL_Project/02_SYN/Netlist/RRT_TOP_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+exit
+
+Memory usage for this session 322 Mbytes.
+Memory usage for this session including child processes 322 Mbytes.
+CPU usage for this session 105 seconds ( 0.03 hours ).
+Elapsed time for this session 111 seconds ( 0.03 hours ).
+
+Thank you...

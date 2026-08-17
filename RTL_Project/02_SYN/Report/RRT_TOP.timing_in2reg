@@ -1,0 +1,2706 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 50
+        -transition_time
+        -capacitance
+Design : RRT_TOP
+Version: T-2022.03
+Date   : Mon Jul 13 01:44:08 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11302/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11302/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n369 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_y_reg[2]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[2]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11018/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11018/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n368 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_y_reg[3]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[3]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11305/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11305/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n365 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_y_reg[6]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[6]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U10968/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U10968/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n364 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_y_reg[7]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[7]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11296/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11296/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n359 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_x_reg[4]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[4]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11299/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11299/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n357 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_x_reg[6]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[6]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11298/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11298/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n356 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_x_reg[7]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[7]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: g_a_size[1]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  g_a_size[1] (in)                                   0.05      0.05       1.05 f
+  p2_tsize[1] (net)              4         0.05                0.00       1.05 f
+  U4657/A (INVXL)                                    0.05      0.00       1.05 f
+  U4657/Y (INVXL)                                    0.73      0.42       1.47 r
+  n7913 (net)                    2         0.03                0.00       1.47 r
+  U10965/B1 (OAI22X1)                                0.73      0.00       1.47 r
+  U10965/Y (OAI22X1)                                 0.35      0.31       1.78 f
+  n7914 (net)                    1         0.02                0.00       1.78 f
+  U10966/A1 (OAI22X2)                                0.35      0.00       1.78 f
+  U10966/Y (OAI22X2)                                 0.41      0.27       2.05 r
+  n7916 (net)                    2         0.02                0.00       2.05 r
+  U5640/A1N (OAI2BB1X2)                              0.41      0.00       2.05 r
+  U5640/Y (OAI2BB1X2)                                0.20      0.25       2.30 r
+  n7917 (net)                    1         0.02                0.00       2.30 r
+  U5378/B (NAND2X4)                                  0.20      0.00       2.30 r
+  U5378/Y (NAND2X4)                                  0.08      0.09       2.39 f
+  n7919 (net)                    1         0.02                0.00       2.39 f
+  U10967/A (AND2X8)                                  0.08      0.00       2.39 f
+  U10967/Y (AND2X8)                                  0.30      0.29       2.68 f
+  n8365 (net)                   24         0.28                0.00       2.68 f
+  U11309/A0 (AO22X1)                                 0.30      0.00       2.68 f
+  U11309/Y (AO22X1)                                  0.17      0.38       3.06 f
+  n355 (net)                     1         0.01                0.00       3.06 f
+  u_PE3/read_z_reg[0]/D (DFFRX2)                     0.17      0.00       3.06 f
+  data arrival time                                                       3.06
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[0]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.13       3.07
+  data required time                                                      3.07
+  -------------------------------------------------------------------------------
+  data required time                                                      3.07
+  data arrival time                                                      -3.06
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.01
+
+
+  Startpoint: rand_num1[1]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_x_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[1] (in)                                  0.03      0.03       1.03 f
+  rand_num1[1] (net)             2         0.03                0.00       1.03 f
+  U4750/C (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.27       1.29 r
+  n7961 (net)                    2         0.02                0.00       1.29 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.29 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.61 r
+  n5189 (net)                    2         0.03                0.00       1.61 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.61 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.95 f
+  n7954 (net)                    2         0.03                0.00       1.95 f
+  U4389/A (INVX2)                                    0.47      0.00       1.95 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.36 r
+  n7955 (net)                    6         0.08                0.00       2.36 r
+  U6919/B0 (AOI21X1)                                 0.49      0.00       2.36 r
+  U6919/Y (AOI21X1)                                  0.29      0.25       2.61 f
+  n7959 (net)                    2         0.02                0.00       2.61 f
+  U11057/B0 (OAI21XL)                                0.29      0.00       2.61 f
+  U11057/Y (OAI21XL)                                 0.69      0.32       2.92 r
+  u_PE1/rand_x[4] (net)          1         0.01                0.00       2.92 r
+  u_PE1/rand_x_reg_reg[4]/D (DFFRX4)                 0.69      0.00       2.92 r
+  data arrival time                                                       2.92
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_x_reg_reg[4]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.92
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.02
+
+
+  Startpoint: rand_num1[1]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[1] (in)                                  0.03      0.03       1.03 f
+  rand_num1[1] (net)             2         0.03                0.00       1.03 f
+  U4750/C (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.27       1.29 r
+  n7961 (net)                    2         0.02                0.00       1.29 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.29 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.61 r
+  n5189 (net)                    2         0.03                0.00       1.61 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.61 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.95 f
+  n7954 (net)                    2         0.03                0.00       1.95 f
+  U4389/A (INVX2)                                    0.47      0.00       1.95 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.36 r
+  n7955 (net)                    6         0.08                0.00       2.36 r
+  U5886/B0 (AOI21X1)                                 0.49      0.00       2.36 r
+  U5886/Y (AOI21X1)                                  0.29      0.25       2.60 f
+  n7555 (net)                    2         0.02                0.00       2.60 f
+  U5245/B0 (OAI21XL)                                 0.29      0.00       2.60 f
+  U5245/Y (OAI21XL)                                  0.69      0.32       2.92 r
+  u_PE1/rand_y[6] (net)          1         0.01                0.00       2.92 r
+  u_PE1/rand_y_reg_reg[6]/D (DFFRX4)                 0.69      0.00       2.92 r
+  data arrival time                                                       2.92
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_y_reg_reg[6]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.92
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.02
+
+
+  Startpoint: rand_num1[1]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[1] (in)                                  0.03      0.03       1.03 f
+  rand_num1[1] (net)             2         0.03                0.00       1.03 f
+  U4750/C (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.27       1.29 r
+  n7961 (net)                    2         0.02                0.00       1.29 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.29 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.61 r
+  n5189 (net)                    2         0.03                0.00       1.61 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.61 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.95 f
+  n7954 (net)                    2         0.03                0.00       1.95 f
+  U4389/A (INVX2)                                    0.47      0.00       1.95 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.36 r
+  n7955 (net)                    6         0.08                0.00       2.36 r
+  U5891/B0 (AOI21X1)                                 0.49      0.00       2.36 r
+  U5891/Y (AOI21X1)                                  0.29      0.25       2.60 f
+  n9453 (net)                    2         0.02                0.00       2.60 f
+  U11052/B0 (OAI21XL)                                0.29      0.00       2.60 f
+  U11052/Y (OAI21XL)                                 0.69      0.32       2.92 r
+  u_PE1/rand_y[4] (net)          1         0.01                0.00       2.92 r
+  u_PE1/rand_y_reg_reg[4]/D (DFFRX4)                 0.69      0.00       2.92 r
+  data arrival time                                                       2.92
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_y_reg_reg[4]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.92
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.02
+
+
+  Startpoint: rand_num1[1]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[1] (in)                                  0.03      0.03       1.03 f
+  rand_num1[1] (net)             2         0.03                0.00       1.03 f
+  U4750/C (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.27       1.29 r
+  n7961 (net)                    2         0.02                0.00       1.29 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.29 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.61 r
+  n5189 (net)                    2         0.03                0.00       1.61 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.61 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.95 f
+  n7954 (net)                    2         0.03                0.00       1.95 f
+  U4389/A (INVX2)                                    0.47      0.00       1.95 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.36 r
+  n7955 (net)                    6         0.08                0.00       2.36 r
+  U5882/B0 (AOI21X1)                                 0.49      0.00       2.36 r
+  U5882/Y (AOI21X1)                                  0.29      0.25       2.60 f
+  n7953 (net)                    2         0.02                0.00       2.60 f
+  U11050/B0 (OAI21XL)                                0.29      0.00       2.60 f
+  U11050/Y (OAI21XL)                                 0.69      0.32       2.92 r
+  u_PE1/rand_y[7] (net)          1         0.01                0.00       2.92 r
+  u_PE1/rand_y_reg_reg[7]/D (DFFRX4)                 0.69      0.00       2.92 r
+  data arrival time                                                       2.92
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_y_reg_reg[7]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.92
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.02
+
+
+  Startpoint: rand_num0[2]
+              (input port clocked by clk)
+  Endpoint: u_PE0/gz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num0[2] (in)                                  0.03      0.03       1.03 f
+  rand_num0[2] (net)             2         0.03                0.00       1.03 f
+  U4749/C (NOR3X2)                                   0.03      0.00       1.03 f
+  U4749/Y (NOR3X2)                                   0.38      0.27       1.29 r
+  n6888 (net)                    2         0.02                0.00       1.29 r
+  U4669/AN (NOR2BX2)                                 0.38      0.00       1.29 r
+  U4669/Y (NOR2BX2)                                  0.21      0.25       1.54 r
+  n4869 (net)                    1         0.02                0.00       1.54 r
+  U4596/A (INVX3)                                    0.21      0.00       1.54 r
+  U4596/Y (INVX3)                                    0.16      0.15       1.70 f
+  n5912 (net)                    2         0.05                0.00       1.70 f
+  U8964/B (NAND2X8)                                  0.16      0.00       1.70 f
+  U8964/Y (NAND2X8)                                  0.34      0.24       1.94 r
+  n8064 (net)                   16         0.18                0.00       1.94 r
+  U10284/A1 (OA22X1)                                 0.34      0.00       1.94 r
+  U10284/Y (OA22X1)                                  0.38      0.41       2.34 r
+  n10430 (net)                   2         0.02                0.00       2.34 r
+  U5147/A1N (OAI2BB1X1)                              0.38      0.00       2.34 r
+  U5147/Y (OAI2BB1X1)                                0.28      0.30       2.65 r
+  n3681 (net)                    1         0.02                0.00       2.65 r
+  U5495/A (NAND2X2)                                  0.28      0.00       2.65 r
+  U5495/Y (NAND2X2)                                  0.12      0.11       2.76 f
+  n7639 (net)                    1         0.01                0.00       2.76 f
+  U8151/B0 (OAI21X1)                                 0.12      0.00       2.76 f
+  U8151/Y (OAI21X1)                                  0.35      0.15       2.91 r
+  n591 (net)                     1         0.01                0.00       2.91 r
+  u_PE0/gz_reg_reg[0]/D (DFFRX1)                     0.35      0.00       2.91 r
+  data arrival time                                                       2.91
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE0/gz_reg_reg[0]/CK (DFFRX1)                              0.00       3.20 r
+  library setup time                                          -0.27       2.93
+  data required time                                                      2.93
+  -------------------------------------------------------------------------------
+  data required time                                                      2.93
+  data arrival time                                                      -2.91
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.02
+
+
+  Startpoint: rand_num1[1]
+              (input port clocked by clk)
+  Endpoint: u_PE1/gx_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  rand_num1[1] (in)                                  0.03      0.03       1.03 r
+  rand_num1[1] (net)             2         0.03                0.00       1.03 r
+  U4750/C (NOR3X2)                                   0.03      0.00       1.03 r
+  U4750/Y (NOR3X2)                                   0.16      0.11       1.14 f
+  n7961 (net)                    2         0.02                0.00       1.14 f
+  U4667/AN (NOR2BX2)                                 0.16      0.00       1.14 f
+  U4667/Y (NOR2BX2)                                  0.14      0.23       1.37 f
+  n5189 (net)                    2         0.03                0.00       1.37 f
+  U5149/B (NAND2XL)                                  0.14      0.00       1.37 f
+  U5149/Y (NAND2XL)                                  0.78      0.48       1.85 r
+  n7954 (net)                    2         0.03                0.00       1.85 r
+  U4389/A (INVX2)                                    0.78      0.00       1.85 r
+  U4389/Y (INVX2)                                    0.37      0.40       2.25 f
+  n7955 (net)                    6         0.08                0.00       2.25 f
+  U6921/B0 (AOI21X1)                                 0.37      0.00       2.25 f
+  U6921/Y (AOI21X1)                                  0.59      0.44       2.69 r
+  n7446 (net)                    2         0.03                0.00       2.69 r
+  U5858/B0 (OAI211X1)                                0.59      0.00       2.69 r
+  U5858/Y (OAI211X1)                                 0.26      0.25       2.93 f
+  n711 (net)                     1         0.01                0.00       2.93 f
+  u_PE1/gx_reg_reg[3]/D (DFFRX1)                     0.26      0.00       2.93 f
+  data arrival time                                                       2.93
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/gx_reg_reg[3]/CK (DFFRX1)                              0.00       3.20 r
+  library setup time                                          -0.24       2.96
+  data required time                                                      2.96
+  -------------------------------------------------------------------------------
+  data required time                                                      2.96
+  data arrival time                                                      -2.93
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.02
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11304/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11304/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n371 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_y_reg[0]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[0]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11020/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11020/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n370 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_y_reg[1]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[1]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11001/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11001/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n367 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_y_reg[4]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[4]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_y_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U10979/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U10979/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n366 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_y_reg[5]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_y_reg[5]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11295/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11295/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n363 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_x_reg[0]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[0]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11294/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11294/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n362 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_x_reg[1]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[1]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11293/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11293/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n361 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_x_reg[2]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[2]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11009/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11009/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n360 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_x_reg[3]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[3]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_x_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11297/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11297/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n358 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_x_reg[5]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_x_reg[5]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11016/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11016/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n354 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[1]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[1]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11310/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11310/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n353 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[2]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[2]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11011/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11011/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n352 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[3]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[3]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11306/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11306/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n351 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[4]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[4]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U10982/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U10982/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n350 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[5]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[5]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11307/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11307/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n349 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[6]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[6]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[2]
+              (input port clocked by clk)
+  Endpoint: u_PE3/read_z_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[2] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[2] (net)              3         0.04                0.00       1.04 r
+  U5428/A (CLKINVX1)                                 0.04      0.00       1.04 r
+  U5428/Y (CLKINVX1)                                 0.54      0.33       1.37 f
+  n9119 (net)                    4         0.05                0.00       1.37 f
+  U10965/A1 (OAI22X1)                                0.54      0.00       1.37 f
+  U10965/Y (OAI22X1)                                 0.51      0.36       1.73 r
+  n7914 (net)                    1         0.02                0.00       1.73 r
+  U10966/A1 (OAI22X2)                                0.51      0.00       1.73 r
+  U10966/Y (OAI22X2)                                 0.23      0.23       1.96 f
+  n7916 (net)                    2         0.02                0.00       1.96 f
+  U5640/A1N (OAI2BB1X2)                              0.23      0.00       1.96 f
+  U5640/Y (OAI2BB1X2)                                0.21      0.25       2.21 f
+  n7917 (net)                    1         0.02                0.00       2.21 f
+  U5378/B (NAND2X4)                                  0.21      0.00       2.21 f
+  U5378/Y (NAND2X4)                                  0.11      0.12       2.33 r
+  n7919 (net)                    1         0.02                0.00       2.33 r
+  U10967/A (AND2X8)                                  0.11      0.00       2.33 r
+  U10967/Y (AND2X8)                                  0.44      0.34       2.67 r
+  n8365 (net)                   24         0.28                0.00       2.67 r
+  U11006/A0 (AO22X1)                                 0.44      0.00       2.67 r
+  U11006/Y (AO22X1)                                  0.24      0.31       2.98 r
+  n348 (net)                     1         0.01                0.00       2.98 r
+  u_PE3/read_z_reg[7]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE3/read_z_reg[7]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: rand_num1[2]
+              (input port clocked by clk)
+  Endpoint: u_PE1/gx_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  rand_num1[2] (in)                                  0.03      0.03       1.03 r
+  rand_num1[2] (net)             2         0.03                0.00       1.03 r
+  U4750/B (NOR3X2)                                   0.03      0.00       1.03 r
+  U4750/Y (NOR3X2)                                   0.16      0.11       1.13 f
+  n7961 (net)                    2         0.02                0.00       1.13 f
+  U4667/AN (NOR2BX2)                                 0.16      0.00       1.13 f
+  U4667/Y (NOR2BX2)                                  0.14      0.23       1.37 f
+  n5189 (net)                    2         0.03                0.00       1.37 f
+  U5149/B (NAND2XL)                                  0.14      0.00       1.37 f
+  U5149/Y (NAND2XL)                                  0.78      0.48       1.84 r
+  n7954 (net)                    2         0.03                0.00       1.84 r
+  U4389/A (INVX2)                                    0.78      0.00       1.84 r
+  U4389/Y (INVX2)                                    0.37      0.40       2.24 f
+  n7955 (net)                    6         0.08                0.00       2.24 f
+  U6921/B0 (AOI21X1)                                 0.37      0.00       2.24 f
+  U6921/Y (AOI21X1)                                  0.59      0.44       2.68 r
+  n7446 (net)                    2         0.03                0.00       2.68 r
+  U5858/B0 (OAI211X1)                                0.59      0.00       2.68 r
+  U5858/Y (OAI211X1)                                 0.26      0.25       2.93 f
+  n711 (net)                     1         0.01                0.00       2.93 f
+  u_PE1/gx_reg_reg[3]/D (DFFRX1)                     0.26      0.00       2.93 f
+  data arrival time                                                       2.93
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/gx_reg_reg[3]/CK (DFFRX1)                              0.00       3.20 r
+  library setup time                                          -0.24       2.96
+  data required time                                                      2.96
+  -------------------------------------------------------------------------------
+  data required time                                                      2.96
+  data arrival time                                                      -2.93
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: rand_num1[2]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_x_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[2] (in)                                  0.03      0.03       1.03 f
+  rand_num1[2] (net)             2         0.03                0.00       1.03 f
+  U4750/B (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.25       1.28 r
+  n7961 (net)                    2         0.02                0.00       1.28 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.28 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.59 r
+  n5189 (net)                    2         0.03                0.00       1.59 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.59 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.93 f
+  n7954 (net)                    2         0.03                0.00       1.93 f
+  U4389/A (INVX2)                                    0.47      0.00       1.93 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.34 r
+  n7955 (net)                    6         0.08                0.00       2.34 r
+  U6919/B0 (AOI21X1)                                 0.49      0.00       2.34 r
+  U6919/Y (AOI21X1)                                  0.29      0.25       2.59 f
+  n7959 (net)                    2         0.02                0.00       2.59 f
+  U11057/B0 (OAI21XL)                                0.29      0.00       2.59 f
+  U11057/Y (OAI21XL)                                 0.69      0.32       2.91 r
+  u_PE1/rand_x[4] (net)          1         0.01                0.00       2.91 r
+  u_PE1/rand_x_reg_reg[4]/D (DFFRX4)                 0.69      0.00       2.91 r
+  data arrival time                                                       2.91
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_x_reg_reg[4]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.91
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: rand_num1[2]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[2] (in)                                  0.03      0.03       1.03 f
+  rand_num1[2] (net)             2         0.03                0.00       1.03 f
+  U4750/B (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.25       1.28 r
+  n7961 (net)                    2         0.02                0.00       1.28 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.28 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.59 r
+  n5189 (net)                    2         0.03                0.00       1.59 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.59 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.93 f
+  n7954 (net)                    2         0.03                0.00       1.93 f
+  U4389/A (INVX2)                                    0.47      0.00       1.93 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.34 r
+  n7955 (net)                    6         0.08                0.00       2.34 r
+  U5886/B0 (AOI21X1)                                 0.49      0.00       2.34 r
+  U5886/Y (AOI21X1)                                  0.29      0.25       2.59 f
+  n7555 (net)                    2         0.02                0.00       2.59 f
+  U5245/B0 (OAI21XL)                                 0.29      0.00       2.59 f
+  U5245/Y (OAI21XL)                                  0.69      0.32       2.91 r
+  u_PE1/rand_y[6] (net)          1         0.01                0.00       2.91 r
+  u_PE1/rand_y_reg_reg[6]/D (DFFRX4)                 0.69      0.00       2.91 r
+  data arrival time                                                       2.91
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_y_reg_reg[6]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.91
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: rand_num1[2]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[2] (in)                                  0.03      0.03       1.03 f
+  rand_num1[2] (net)             2         0.03                0.00       1.03 f
+  U4750/B (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.25       1.28 r
+  n7961 (net)                    2         0.02                0.00       1.28 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.28 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.59 r
+  n5189 (net)                    2         0.03                0.00       1.59 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.59 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.93 f
+  n7954 (net)                    2         0.03                0.00       1.93 f
+  U4389/A (INVX2)                                    0.47      0.00       1.93 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.34 r
+  n7955 (net)                    6         0.08                0.00       2.34 r
+  U5891/B0 (AOI21X1)                                 0.49      0.00       2.34 r
+  U5891/Y (AOI21X1)                                  0.29      0.25       2.59 f
+  n9453 (net)                    2         0.02                0.00       2.59 f
+  U11052/B0 (OAI21XL)                                0.29      0.00       2.59 f
+  U11052/Y (OAI21XL)                                 0.69      0.32       2.91 r
+  u_PE1/rand_y[4] (net)          1         0.01                0.00       2.91 r
+  u_PE1/rand_y_reg_reg[4]/D (DFFRX4)                 0.69      0.00       2.91 r
+  data arrival time                                                       2.91
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_y_reg_reg[4]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.91
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: rand_num1[2]
+              (input port clocked by clk)
+  Endpoint: u_PE1/rand_y_reg_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[2] (in)                                  0.03      0.03       1.03 f
+  rand_num1[2] (net)             2         0.03                0.00       1.03 f
+  U4750/B (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.25       1.28 r
+  n7961 (net)                    2         0.02                0.00       1.28 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.28 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.59 r
+  n5189 (net)                    2         0.03                0.00       1.59 r
+  U5149/B (NAND2XL)                                  0.32      0.00       1.59 r
+  U5149/Y (NAND2XL)                                  0.47      0.34       1.93 f
+  n7954 (net)                    2         0.03                0.00       1.93 f
+  U4389/A (INVX2)                                    0.47      0.00       1.93 f
+  U4389/Y (INVX2)                                    0.49      0.41       2.34 r
+  n7955 (net)                    6         0.08                0.00       2.34 r
+  U5882/B0 (AOI21X1)                                 0.49      0.00       2.34 r
+  U5882/Y (AOI21X1)                                  0.29      0.25       2.59 f
+  n7953 (net)                    2         0.02                0.00       2.59 f
+  U11050/B0 (OAI21XL)                                0.29      0.00       2.59 f
+  U11050/Y (OAI21XL)                                 0.69      0.32       2.91 r
+  u_PE1/rand_y[7] (net)          1         0.01                0.00       2.91 r
+  u_PE1/rand_y_reg_reg[7]/D (DFFRX4)                 0.69      0.00       2.91 r
+  data arrival time                                                       2.91
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/rand_y_reg_reg[7]/CK (DFFRX4)                          0.00       3.20 r
+  library setup time                                          -0.26       2.94
+  data required time                                                      2.94
+  -------------------------------------------------------------------------------
+  data required time                                                      2.94
+  data arrival time                                                      -2.91
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: rand_num1[1]
+              (input port clocked by clk)
+  Endpoint: u_PE1/gz_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 f
+  rand_num1[1] (in)                                  0.03      0.03       1.03 f
+  rand_num1[1] (net)             2         0.03                0.00       1.03 f
+  U4750/C (NOR3X2)                                   0.03      0.00       1.03 f
+  U4750/Y (NOR3X2)                                   0.38      0.27       1.29 r
+  n7961 (net)                    2         0.02                0.00       1.29 r
+  U4667/AN (NOR2BX2)                                 0.38      0.00       1.29 r
+  U4667/Y (NOR2BX2)                                  0.32      0.31       1.61 r
+  n5189 (net)                    2         0.03                0.00       1.61 r
+  U6155/A (INVX3)                                    0.32      0.00       1.61 r
+  U6155/Y (INVX3)                                    0.13      0.14       1.74 f
+  n4944 (net)                    1         0.03                0.00       1.74 f
+  U9062/B (NAND2X8)                                  0.13      0.00       1.74 f
+  U9062/Y (NAND2X8)                                  0.38      0.25       2.00 r
+  n7964 (net)                   18         0.21                0.00       2.00 r
+  U5539/A1 (OA22X2)                                  0.38      0.00       2.00 r
+  U5539/Y (OA22X2)                                   0.18      0.30       2.30 r
+  n10425 (net)                   2         0.02                0.00       2.30 r
+  U11748/A1 (AO21X1)                                 0.18      0.00       2.30 r
+  U11748/Y (AO21X1)                                  0.26      0.29       2.58 r
+  n9421 (net)                    1         0.02                0.00       2.58 r
+  U11749/B0 (OAI21X2)                                0.26      0.00       2.58 r
+  U11749/Y (OAI21X2)                                 0.14      0.12       2.70 f
+  n9422 (net)                    1         0.01                0.00       2.70 f
+  U5243/B (NAND2XL)                                  0.14      0.00       2.70 f
+  U5243/Y (NAND2XL)                                  0.38      0.26       2.96 r
+  n700 (net)                     1         0.01                0.00       2.96 r
+  u_PE1/gz_reg_reg[0]/D (DFFRX2)                     0.38      0.00       2.96 r
+  data arrival time                                                       2.96
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE1/gz_reg_reg[0]/CK (DFFRX2)                              0.00       3.20 r
+  library setup time                                          -0.21       2.99
+  data required time                                                      2.99
+  -------------------------------------------------------------------------------
+  data required time                                                      2.99
+  data arrival time                                                      -2.96
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_y_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U10980/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U10980/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n503 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_y_reg[1]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_y_reg[1]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_y_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11023/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11023/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n501 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_y_reg[3]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_y_reg[3]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_y_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U10990/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U10990/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n500 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_y_reg[4]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_y_reg[4]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_y_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U10962/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U10962/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n499 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_y_reg[5]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_y_reg[5]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_y_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11445/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11445/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n498 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_y_reg[6]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_y_reg[6]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_x_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11436/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11436/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n495 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_x_reg[1]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_x_reg[1]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_x_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U7925/A0 (AO22X1)                                  0.85      0.00       2.64 r
+  U7925/Y (AO22X1)                                   0.24      0.34       2.98 r
+  n494 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_x_reg[2]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_x_reg[2]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_x_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11028/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11028/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n493 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_x_reg[3]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_x_reg[3]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_x_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11035/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11035/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n492 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_x_reg[4]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_x_reg[4]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_x_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11442/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11442/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n491 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_x_reg[5]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_x_reg[5]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_z_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11452/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11452/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n486 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_z_reg[2]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_z_reg[2]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_z_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11454/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11454/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n485 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_z_reg[3]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_z_reg[3]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_z_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11455/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11455/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n484 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_z_reg[4]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_z_reg[4]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+  Startpoint: g_a_size[0]
+              (input port clocked by clk)
+  Endpoint: u_PE2/read_z_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN2REG
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RRT_TOP            tsmc13_wl10           slow
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock clk (rise edge)                                        0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  input external delay                                         1.00       1.00 r
+  g_a_size[0] (in)                                   0.04      0.04       1.04 r
+  p2_tsize[0] (net)              3         0.04                0.00       1.04 r
+  U4649/A (INVX1)                                    0.04      0.00       1.04 r
+  U4649/Y (INVX1)                                    0.19      0.12       1.16 f
+  n7912 (net)                    2         0.02                0.00       1.16 f
+  U4509/A0N (AOI2BB2X1)                              0.19      0.00       1.16 f
+  U4509/Y (AOI2BB2X1)                                0.24      0.34       1.50 f
+  n7904 (net)                    1         0.02                0.00       1.50 f
+  U10959/A1 (OAI22X2)                                0.24      0.00       1.50 f
+  U10959/Y (OAI22X2)                                 0.46      0.27       1.77 r
+  n7906 (net)                    2         0.03                0.00       1.77 r
+  U4402/AN (NOR2BX2)                                 0.46      0.00       1.77 r
+  U4402/Y (NOR2BX2)                                  0.19      0.24       2.01 r
+  n7909 (net)                    1         0.01                0.00       2.01 r
+  U10961/A1 (OA21X4)                                 0.19      0.00       2.01 r
+  U10961/Y (OA21X4)                                  0.85      0.62       2.64 r
+  n8647 (net)                   24         0.28                0.00       2.64 r
+  U11449/A0 (AO22X1)                                 0.85      0.00       2.64 r
+  U11449/Y (AO22X1)                                  0.24      0.34       2.98 r
+  n483 (net)                     1         0.01                0.00       2.98 r
+  u_PE2/read_z_reg[5]/D (DFFRX4)                     0.24      0.00       2.98 r
+  data arrival time                                                       2.98
+
+  clock clk (rise edge)                                        3.30       3.30
+  clock network delay (ideal)                                  0.00       3.30
+  clock uncertainty                                           -0.10       3.20
+  u_PE2/read_z_reg[5]/CK (DFFRX4)                              0.00       3.20 r
+  library setup time                                          -0.19       3.01
+  data required time                                                      3.01
+  -------------------------------------------------------------------------------
+  data required time                                                      3.01
+  data arrival time                                                      -2.98
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.03
+
+
+1

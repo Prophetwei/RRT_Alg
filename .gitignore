@@ -1,0 +1,55 @@
+RTL Project/
+Related Paper/
+a.out_file/
+tree/
+A_1.5-J_Task_Path-Planning_Processor_for_2-D_3-D_Autonomous_Navigation_of_Microrobots.pdf
+map/*.txt
+*.DS_Store
+*.png
+
+# Generated 3-D occupancy maps and RTL map images.
+/3D/map*/map*.txt
+/RTL_Project/map/*.txt
+
+# The legacy tree/ rule above applies repo-wide; retain 3-D result data.
+!/3D/tree/
+!/3D/tree/**
+
+# Compiled binaries and simulator executables (keep source/run scripts).
+/3D/rrt
+/3D/rrt_con
+/2D/rrt
+/2D_Dynamic/rrt
+/rrt
+/rrt_opt
+/a.out
+/RTL_Project/**/simulation.out
+/RTL_Project/**/sim.out
+/RTL_Project/**/simv*
+*.vvp
+*.o
+*.so
+*.dylib
+*.exe
+
+# Simulation waveforms, caches, and tool work directories.
+*.vcd
+*.fsdb
+*.vpd
+*.pyc
+__pycache__/
+*.daidir/
+csrc/
+INCA_libs/
+xcelium.d/
+*.shm/
+
+# Machine-local assistant settings are not part of the design.
+/RTL_Project/.claude/
+
+# Local datasets, preliminary-prototype outputs, and licensed collateral.
+/2D/map/*.txt
+/2D_Dynamic/map/*.txt
+/2D_Dynamic/result/
+/CBDK_IC_Contest_v2.5/
+/.venv/

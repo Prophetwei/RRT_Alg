@@ -1,0 +1,49 @@
+name: Source checks
+
+on:
+  push:
+    paths:
+      - "3D/**"
+      - "RTL_Project/**"
+      - ".github/workflows/source-check.yml"
+  pull_request:
+    paths:
+      - "3D/**"
+      - "RTL_Project/**"
+      - ".github/workflows/source-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Compile C++ models
+        run: |
+          g++ -O3 -DNDEBUG -std=c++17 2D/rrt.cpp -o /tmp/rrt_2d
+          g++ -O3 -DNDEBUG -std=c++17 2D_Dynamic/rrt.cpp -o /tmp/rrt_2d_dynamic
+          g++ -O3 -DNDEBUG -std=c++17 2D_Dynamic/legacy_single_tree.cpp -o /tmp/rrt_2d_dynamic_legacy
+          g++ -O3 -DNDEBUG -std=c++17 3D/rrt.cpp -o /tmp/rrt_3d
+          g++ -O3 -DNDEBUG -std=c++17 3D/rrt_con.cpp -o /tmp/rrt_3d_con
+
+      - name: Check Python and shell sources
+        run: |
+          python3 -m py_compile 2D/map_generator.py 2D/verify.py 2D/visualize_path.py
+          python3 -m py_compile 2D_Dynamic/map_generator_dynamic.py 2D_Dynamic/visualize_path.py
+          python3 -m py_compile 3D/map_generator.py 3D/state.py 3D/visualize_3D.py
+          python3 -m py_compile RTL_Project/map/map_gen.py RTL_Project/outputs/generate_charts.py
+          bash -n 3D/run_10maps.sh RTL_Project/01_RTL/01_run.sh RTL_Project/01_RTL/01_run_10maps.sh
+
+      - name: Elaborate current RTL
+        working-directory: RTL_Project/01_RTL
+        run: iverilog -g2012 -DRTL_TOP -s TESTBED -o /tmp/rrt_rtl.vvp TESTBED.sv

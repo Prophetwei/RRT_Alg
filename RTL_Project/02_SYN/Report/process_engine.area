@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : process_engine
+Version: T-2022.03
+Date   : Sun May 31 17:51:47 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /usr/cad/umc018/Synthesis/slow.db)
+
+Number of ports:                          144
+Number of nets:                          1608
+Number of cells:                         1483
+Number of combinational cells:           1241
+Number of sequential cells:               242
+Number of macros/black boxes:               0
+Number of buf/inv:                        267
+Number of references:                      74
+
+Combinational area:              21724.718762
+Buf/Inv area:                     2707.689695
+Noncombinational area:           15554.246571
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 37278.965333
+Total area:                 undefined
+1

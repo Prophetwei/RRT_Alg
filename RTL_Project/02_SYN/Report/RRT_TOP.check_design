@@ -1,0 +1,76 @@
+ 
+****************************************
+check_design summary:
+Version:     T-2022.03
+Date:        Mon Jul 13 01:43:54 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     62
+    Unconnected ports (LINT-28)                                    62
+--------------------------------------------------------------------------------
+
+Warning: In design 'RRT_TOP', port 's_tree_size[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_tree_size[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_tree_size[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 's_a_parent[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'RRT_TOP', port 'g_a_parent[0]' is not connected to any nets. (LINT-28)
+1
