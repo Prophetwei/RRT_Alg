@@ -10,6 +10,9 @@ artifacts, and the constraints used for physical implementation.
 > design is `RTL_Project/01_RTL`; the other RTL variants are retained as design
 > history.
 
+Read the [Research Poster](docs/RRT_Accelerator_Poster.pdf) for an overview of
+the architecture, implementation, and experimental results.
+
 ## Project Summary
 
 The accelerator grows start and goal trees concurrently with four processing
